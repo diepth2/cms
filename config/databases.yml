@@ -4,7 +4,7 @@ all:
     param:
       dsn: 'mysql:host=103.28.37.24;dbname=gamevina_v2'
       username: root
-      password: mysql!mi14@
+      password: 
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
   doctrine:
     class: sfDoctrineDatabase
@@ -14,5 +14,5 @@ all:
 #      username: vtp_v2
       username: root
 #      password: ''
-      password: mysql!mi14@
+      password: 
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
