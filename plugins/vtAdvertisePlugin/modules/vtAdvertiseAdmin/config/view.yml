@@ -1,0 +1,22 @@
+indexSuccess:
+  metas:
+    title: Quản lý quảng cáo
+newSuccess:
+  metas:
+    title: Thêm mới quảng cáo
+editSuccess:
+  metas:
+    title: Chỉnh sửa quảng cáo
+
+#default:
+#  http_metas:
+#    content-type: text/html
+#  stylesheets:
+#    - /vtSlideshowPlugin/css/jquery.multiselect.css
+#    - /vtSlideshowPlugin/css/jquery.multiselect.filter.css
+#    - /vtSlideshowPlugin/css/jquery-ui.css
+#  javascripts:
+#    - /vtSlideshowPlugin/js/jquery-ui.min.js
+#    - /vtSlideshowPlugin/js/jquery.multiselect.js
+#    - /vtSlideshowPlugin/js/jquery.multiselect.filter.js
+#    - /vtSlideshowPlugin/js/prettify.js

@@ -1,0 +1,28 @@
+# cau hoi thuong gap
+VtFAQs:
+  tableName: vt_faq
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+      comment: ID tu tang
+    question:
+      type: string(500)
+      notnull: true
+      comment: Cau hoi
+    answer:
+      type: clob
+      extra: ckeditor
+      notnull: true
+      comment: Cau tra loi
+    is_active:
+      type: boolean
+      default: false
+      comment: 'Trang thai kich hoat: 0 - Chua kich hoat, 1 - Kich hoat'
+    priority:
+      type: integer(8)
+      comment: Do uu tien
+      default: 0

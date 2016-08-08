@@ -1,0 +1,5 @@
+all:
+  with_layout: false
+
+_listByLocation:
+  enabled: true

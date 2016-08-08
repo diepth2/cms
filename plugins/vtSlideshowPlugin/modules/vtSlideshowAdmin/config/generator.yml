@@ -1,0 +1,57 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           VtSlideshow
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          vt_slideshow
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Quản lý slideshow
+        display:
+          - file_path
+          - '=name'
+          - url
+          - is_active
+          - priority
+          - start_time
+          - end_time
+        fields:
+          file_path:
+            is_partial: true
+          start_time:
+            is_partial: true
+          end_time:
+            is_partial: true
+        object_actions:
+          _edit: ~
+          _delete: ~
+      filter:
+        display:
+          - name
+          - is_active
+      form:
+        display:
+          - name
+          - url
+          - is_active
+          - is_flash
+          - priority
+          - file_path
+          - start_time
+          - end_time
+          - description
+      edit:
+        title: Chỉnh sửa slideshow
+      new:
+        title: Thêm mới slideshow
+      show:    ~
+      revert:  ~

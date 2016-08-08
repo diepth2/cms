@@ -1,0 +1,123 @@
+all:
+  # Change these if you'd like to move/modify CSS & JS files
+  tmcTwitterBootstrapPlugin:
+    bootstrap_path:              /tmcTwitterBootstrapPlugin/css/bootstrap.min.css
+    responsive_bootstrap_path:   /tmcTwitterBootstrapPlugin/css/bootstrap-responsive.min.css
+    admin_styles_path:           /tmcTwitterBootstrapPlugin/css/styles.css
+    jquery_path:                 /tmcTwitterBootstrapPlugin/js/jquery.min.js
+    bootstrap_js_path:           /tmcTwitterBootstrapPlugin/js/bootstrap.min.js
+    admin_js_path:               /tmcTwitterBootstrapPlugin/js/global.js
+
+#    # The route/URI to use for the nav bar's "brand" link
+#    profile_route: @homepage?username=
+#    # The link next for the nav bar's "brand" link
+#    dashboard_name: Administration
+    header:
+      menu:
+        Quản trị hệ thống:
+          credentials: [admin]
+          dropdown:
+            Danh sách người dùng:
+              route: sf_guard_user
+            Danh sách người dùng Frontend:
+              route: vtp_users
+            Danh sách quyền hạn:
+              route: sf_guard_permission
+        Quản lý doanh thu:
+          credentials: [admin]
+          dropdown:
+            Quản lý tiền phế trong game:
+              credentials: [[admin]]
+              route: money_log
+        Quản lý game:
+          credentials: [[admin]]
+          dropdown:
+            Quản lý game:
+              credentials: [[admin]]
+              route: game
+            Quản lý lịch sử chơi game:
+              credentials: [[admin]]
+              route: game_history
+            Quản lý Log Game:
+              credentials: [[admin]]
+              route: game_log
+            Quản lý nhà cung cấp game:
+              credentials: [admin]
+              route: game_provider
+            Danh sách giao dịch game:
+              credentials: [admin]
+              route: game_transaction
+            Quản lý Version Game:
+              credentials: [admin]
+              route: game_version
+            Quản lý phòng Game:
+              credentials: [admin]
+              route: room
+        Quản lý người chơi game:
+          credentials: [[admin]]
+          dropdown:
+            Quản lý user đăng ký:
+              credentials: [[admin]]
+              route: user_register
+            Quản lý thông tin người chơi:
+              credentials: [[admin]]
+              route: user
+        Quản lý tiền trong game:
+          credentials: [[admin]]
+          dropdown:
+            Quản lý tiền trong game:
+              credentials: [[admin]]
+              route: money_log
+            Quản lý cash cược:
+              credentials: [[admin]]
+              route: bet_cash
+            Quản lý gold cược:
+              credentials: [[admin]]
+              route: bet_gold
+            Quản lý nhà cung cấp thẻ:
+              credentials: [[admin]]
+              route: card_provider
+            Quản lý quà tặng:
+              credentials: [[admin]]
+              route: gift
+            Quản lý loại quà tặng:
+              credentials: [[admin]]
+              route: gift_type             
+        Quản lý tin nhắn:
+          credentials: [[admin]]
+          dropdown:
+            Quản lý tin nhắn đến user:
+              credentials: [admin]
+              route: message
+            Quản lý loại tin nhắn:
+              credentials: [admin]
+              route: message_type
+            Quản lý thông báo đến user:
+              credentials: [admin]
+              route: notification
+        Các phân hệ khác:
+          credentials: [[admin]]
+          dropdown:
+            Quản lý testcase:
+              credentials: [admin]
+              route: gv_test_case
+            Quản lý CCU:
+              credentials: [admin]
+              route: online_log
+            Quản lý hệ điều hành:
+              credentials: [admin]
+              route: client_type
+        Ngôn ngữ:
+          dropdown:
+            Tiếng Việt:
+              route: pageVI
+            English:
+              route: pageEN
+  sf_captchagd:
+     image_width:                180 # image width in pixels
+     image_height:               27 # image height in pixels
+     chars:                      "123456789abcdefghijklmnopqrstuvwxyz" # possible chars in captcha
+     length:                     6 # length of captcha
+     font_size:                  14 # font size
+     force_new_captcha:          true # if true - captcha regenerated EVERY request, even if user input true value before
+     fonts: ["akbar/vavobi.ttf"]

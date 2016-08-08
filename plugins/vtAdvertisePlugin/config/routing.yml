@@ -1,0 +1,8 @@
+vt_advertise:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VtAdvertise
+    module:               vtAdvertiseAdmin
+    prefix_path:          /vtAdvertiseAdmin
+    column:               id
+    with_wildcard_routes: true

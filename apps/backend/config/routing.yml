@@ -1,0 +1,285 @@
+client_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ClientType
+    module:               gvManagerClientType
+    prefix_path:          /gvManagerClientType
+    column:               clientId
+    with_wildcard_routes: true
+
+user_register:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
+    module:               gvManagerUserRegister
+    prefix_path:          /gvManagerUserRegister
+    column:               userid
+    with_wildcard_routes: true
+
+money_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoneyLog
+    module:               gvManageMoneyLog
+    prefix_path:          /gvManageMoneyLog
+    column:               logid
+    with_wildcard_routes: true
+
+online_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OnlineLog
+    module:               gvManageOnlineLog
+    prefix_path:          /gvManageOnlineLog
+    column:               logid
+    with_wildcard_routes: true
+
+gv_test_case:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GvTestCase
+    module:               GvManageTestCase
+    prefix_path:          /GvManageTestCase
+    column:               id
+    with_wildcard_routes: true
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
+    module:               gvManageUser
+    prefix_path:          /gvManageUser
+    column:               userid
+    with_wildcard_routes: true
+
+option:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Option
+    module:               gvManageOption
+    prefix_path:          /gvManageOption
+    column:               optionid
+    with_wildcard_routes: true
+announcement:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Announcement
+    module:               gvManageAnnouncement
+    prefix_path:          /gvManageAnnouncement
+    column:               announcementId
+    with_wildcard_routes: true
+avatar_resource:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AvatarResource
+    module:               gvManageAvatarResource
+    prefix_path:          /gvManageAvatarResource
+    column:               avatarResourceId
+    with_wildcard_routes: true
+bet_cash:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                BetCash
+    module:               gvManageBetCash
+    prefix_path:          /gvManageBetCash
+    column:               betCashId
+    with_wildcard_routes: true
+bet_gold:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                BetGold
+    module:               gvManageBetGold
+    prefix_path:          /gvManageBetGold
+    column:               betGoldId
+    with_wildcard_routes: true
+card_provider:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CardProvider
+    module:               gvManageCardProvider
+    prefix_path:          /gvManageCardProvider
+    column:               cardProviderid
+    with_wildcard_routes: true
+cp:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Cp
+    module:               gvManageCp
+    prefix_path:          /gvManageCp
+    column:               cpId
+    with_wildcard_routes: true
+event:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Event
+    module:               gvManageEvent
+    prefix_path:          /gvManageEvent
+    column:               eventId
+    with_wildcard_routes: true
+event_register:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                EventRegister
+    module:               gvManageEventRegister
+    prefix_path:          /gvManageEventRegister
+    column:               eventRegisterId
+    with_wildcard_routes: true
+game:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Game
+    module:               gvManageGame
+    prefix_path:          /gvManageGame
+    column:               gameId
+    with_wildcard_routes: true
+game_history:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GameHistory
+    module:               gvManageGameHistory
+    prefix_path:          /gvManageGameHistory
+    column:               gameHistoryId
+    with_wildcard_routes: true
+game_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GameLog
+    module:               gvManageGameLog
+    prefix_path:          /gvManageGameLog
+    column:               gamelogid
+    with_wildcard_routes: true
+game_provider:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GameProvider
+    module:               gvManageGameProvider
+    prefix_path:          /gvManageGameProvider
+    column:               gameProviderId
+    with_wildcard_routes: true
+game_transaction:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GameTransaction
+    module:               gvManageGameTransaction
+    prefix_path:          /gvManageGameTransaction
+    column:               gameTransactionId
+    with_wildcard_routes: true
+game_version:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GameVersion
+    module:               gvManageGameVersion
+    prefix_path:          /gvManageGameVersion
+    column:               gameVersionId
+    with_wildcard_routes: true
+gift:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Gift
+    module:               gvManageGift
+    prefix_path:          /gvManageGift
+    column:               giftId
+    with_wildcard_routes: true
+gift_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GiftType
+    module:               gvManageGiftType
+    prefix_path:          /gvManageGiftType
+    column:               giftTypeId
+    with_wildcard_routes: true
+message:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Message
+    module:               gvManageMessage
+    prefix_path:          /gvManageMessagen
+    column:               messageId
+    with_wildcard_routes: true
+message_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MessageType
+    module:               gvManageMessageType
+    prefix_path:          /gvManageMessagenType
+    column:               messageTypeId
+    with_wildcard_routes: true
+notification:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Notification
+    module:               gvManageNotification
+    prefix_path:          /gvManageNotification
+    column:               notificationId
+    with_wildcard_routes: true
+room:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Room
+    module:               gvManageRoom
+    prefix_path:          /gvManageRoom
+    column:               roomId
+    with_wildcard_routes: true
+partner:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Partner
+    module:               gvManagePartner
+    prefix_path:          /gvManagePartner
+    column:               partnerId
+    with_wildcard_routes: true
+transaction_card:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TransactionCard
+    module:               gvManageTransactionCard
+    prefix_path:          /gvManageTransactionCard
+    column:               transactionCardId
+    with_wildcard_routes: true
+sf_guard_change_password:
+  url:   /guard/change_password
+  param: { module: sfGuardAuth, action: changePassword }
+
+sf_guard_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardGroup
+    module:               sfGuardGroup
+    prefix_path:          /sfGuardGroup
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               sfGuardUser
+    prefix_path:          /sfGuardUser
+    column:               id
+    with_wildcard_routes: true
+ 
+sf_guard_permission:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardPermission
+    module:               sfGuardPermission
+    prefix_path:          /sfGuardPermission
+    column:               id
+    with_wildcard_routes: true
+homepage:
+  url:   /
+  param: { module: vtHomePage, action: index }
+pageEN:
+  url: /?lang=en
+  param: {  module: vtHomePage, action: index }
+
+pageVI:
+  url: /?lang=vi
+  param: {  module: vtHomePage, action: index }
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+  

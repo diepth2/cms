@@ -1,0 +1,27 @@
+view_page:
+  homepage: {value: homepage, alias: "Trang chủ"}
+  intro: {value: intro, alias: "Giới thiệu"}
+  quydinh: {value: quydinh, alias: "Quy Định"}
+  introduction: {value: introduction, alias: "Trang tĩnh hiển thị"}
+  gamemobile: { value: gamemobile, alias: "Download các phiên bản"}
+  list_gameflash: { value: list_gameflash, alias: "Danh sách game theo chuyên mục"}
+  clan_list: { value: clan_list, alias: "Danh sách bang hội"}
+gameflash_type:
+  danhbai: {value: 1, alias: "Đánh bài"}
+  duaxe: {value: 2, alias: "Đua xe"}
+  giaitri: {value: 3, alias: "Giải trí"}
+  hanhdong: {value: 4, alias: "Hành động"}
+  thethao: {value: 5, alias: "Đánh bài"}
+  tritue: {value: 6, alias: "Trí tuệ"}
+
+advertise_template:
+  top_one: {value: topone, alias: "Quảng cáo top"}
+  right: {value: right, alias: "Mẫu hiển thị cột phải"}
+  left: {value: left, alias: "Mẫu hiển thị cột trái"}
+  bottom: {value: bottom, alias: "Mẫu hiển thị cuối trang"}
+  wap_slide: {value: slide, alias: "Mẫu hiển thị slide cho wap"}
+cash_type:
+  vuagame: {value: 'VG', alias: "Vuagame"}
+  vinaphone: {value: 'VNP', alias: "Vinaphone"}
+  mobilephone: {value: 'VMS', alias: "Mobilephone"}
+  viettel: {value: 'VTT', alias: "Viettel"}

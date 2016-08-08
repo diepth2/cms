@@ -1,0 +1,27 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           User
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user_register
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title : Thống kê user đăng ký
+        display: [parter_name, os_build, imei, userid, username, display_name, registedtime]
+        actions: {}
+        object_actions: {}
+      filter:
+        class: gvManageUserRegisterFormFiltersAdmin
+        display: [registedtime, clientId, cp, ip]
+      form:    ~
+      edit:    ~
+      new:     ~

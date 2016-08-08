@@ -1,0 +1,8 @@
+## YAML Template.
+---
+indexSuccess:
+  stylesheets:
+    - /vtFAQPlugin/css/faq.css
+  javascripts:
+    - /vtFAQPlugin/js/jquery-1.4.1.js
+    - /vtFAQPlugin/js/faqs.js

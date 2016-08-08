@@ -1,0 +1,8 @@
+vt_slideshow:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VtSlideshow
+    module:               vtSlideshowAdmin
+    prefix_path:          /vtSlideshowAdmin
+    column:               id
+    with_wildcard_routes: true

@@ -1,0 +1,3 @@
+<td colspan="7">
+  <?php echo __('%%parter_name%% - %%os_build%% - %%imei%% - %%userid%% - %%username%% - %%display_name%% - %%registedtime%%', array('%%parter_name%%' =>  VtHelper::truncate($user->getParterName(), 50, '...', true) , '%%os_build%%' =>  VtHelper::truncate($user->getOsBuild(), 50, '...', true) , '%%imei%%' =>  VtHelper::truncate($user->getImei(), 50, '...', true) , '%%userid%%' => link_to( VtHelper::truncate($user->getUserid(), 50, '...', true) , 'user_register_edit', $user), '%%username%%' =>  VtHelper::truncate($user->getUsername(), 50, '...', true) , '%%display_name%%' =>  VtHelper::truncate($user->getDisplayName(), 50, '...', true) , '%%registedtime%%' =>  VtHelper::truncate($user->getRegistedtime(), 50, '...', true) ), 'messages') ?>
+</td>

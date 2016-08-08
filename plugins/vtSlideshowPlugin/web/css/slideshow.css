@@ -1,0 +1,111 @@
+#slideshow {
+  margin-bottom: 10px;
+}
+/*
+  AnythingSlider v1.5.10+ Default (base) theme
+  By Chris Coyier: http://css-tricks.com
+  with major improvements by Doug Neiner: http://pixelgraphics.us/
+  based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/******* SET DEFAULT DIMENSIONS HERE ********/
+div.anythingSlider {
+  display: block;
+  width: 700px;
+  height: 390px;
+  margin: 0 auto;
+  overflow: hidden; /* needed for Opera and Safari */
+}
+
+/****** SET COLORS HERE *******/
+/* Default State */
+
+div.anythingSlider .start-stop {
+  display:none;
+}
+/* Active State */
+/**** DO NOT CHANGE BELOW THIS LINE ****/
+/* anythingSlider viewport window */
+div.anythingSlider .anythingWindow {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* wrapper: 45px right & left padding for the arrows, 28px @ bottom for navigation */
+div.anythingSlider {
+  position: relative;
+}
+/* anythingSlider base UL */
+ul.anythingBase {
+  background: transparent;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+ul.anythingBase li.panel {
+  background: transparent;
+  display: block;
+  overflow: hidden;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation Arrows */
+div.anythingSlider .arrow {
+  top: 50%;
+  position: absolute;
+  display: block;
+}
+
+div.anythingSlider .arrow a span { display: block; text-indent: -9999px; }
+div.anythingSlider .forward { right: 0; }
+div.anythingSlider .back { left: 0; }
+div.anythingSlider .forward a { background-position: 0 -40px; }
+div.anythingSlider .back a { background-position: -88px -40px; }
+div.anythingSlider .forward a:hover, div.anythingSlider .forward a.hover { background-position: 0 -240px; }
+div.anythingSlider .back a:hover, div.anythingSlider .back a.hover { background-position: -88px -240px; }
+div.anythingSlider .forward.disabled { display: none; } /* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+div.anythingSlider .back.disabled { display: none; }
+
+/* Navigation Links */
+div.anythingSlider .anythingControls { outline: 0; display: none; }
+
+.anythingControls {
+  position:absolute;
+  right: 10px;
+  bottom:3px;
+  z-index:100;
+  }
+
+.anythingControls .thumbNav {
+  display: block;
+  float: left;
+  margin: 0;
+  z-index: 100;
+}
+.anythingControls .thumbNav li {
+  display: block;
+  float: left;
+  }
+ .anythingControls .thumbNav li a {
+  background: url('../images/fa-normal.png') no-repeat scroll right top transparent;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  margin-left: 4px;
+  text-decoration: none;
+  margin: 3px;
+  padding: 0;
+  outline: 0;
+  display: block;
+ } 
+.anythingControls .thumbNav a.cur, .anythingControls .thumbNav a:hover {
+  color: #90150E;
+  background: url('../images/fa-hover.png') no-repeat scroll right top transparent;
+  }
+.anythingControls .thumbNav a:focus { outline: none; }

@@ -1,0 +1,16 @@
+vt_faqs:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VtFAQs
+    module:               vtFAQsAdmin
+    prefix_path:          /vtFAQsAdmin
+    column:               id
+    with_wildcard_routes: true
+
+
+faqs:
+  url: /cau-hoi-thuong-gap
+  param: { module: vtFAQ , action: index }
+faqs_show:
+  url: /cau-hoi-thuong-gap/show
+  param: { module: vtFAQ , action: show }

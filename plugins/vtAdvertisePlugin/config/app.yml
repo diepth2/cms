@@ -1,0 +1,19 @@
+all:
+  slide_maxsize: 2097152
+  tmcTwitterBootstrapPlugin:
+    bootstrap_path:              /tmcTwitterBootstrapPlugin/css/bootstrap.min.css
+    responsive_bootstrap_path:   /tmcTwitterBootstrapPlugin/css/bootstrap-responsive.min.css
+    admin_styles_path:           /tmcTwitterBootstrapPlugin/css/styles.css
+    jquery_path:                 /tmcTwitterBootstrapPlugin/js/jquery.min.js
+    bootstrap_js_path:           /tmcTwitterBootstrapPlugin/js/bootstrap.min.js
+    admin_js_path:               /tmcTwitterBootstrapPlugin/js/global.js
+
+    header:
+      menu:
+        Quản trị nội dung:
+          credentials: [vt_vtplugin_admin]
+          dropdown:
+            Quản trị quảng cáo:
+              credentials: [vt_adv_admin]
+              route: vt_advertise
+

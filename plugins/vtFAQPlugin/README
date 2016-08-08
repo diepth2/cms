@@ -1,0 +1,75 @@
+1. Cài đặt ckedittor
+
+2. enable modul trong file setting.yml
+	enable trong file config\ProjectConfiguration.class.php: 
+		 $this->enablePlugins(array(		
+		  'sfCKEditorPlugin',
+		  ....
+		  'vtFAQPlugin',
+		));
+		
+    Đối với cms thêm vào file admin\config\settings.yml:
+        enabled_modules:        [default, sfCKEditor, vtFAQsAdmin ]
+
+    Khi sử dụng cho frontend thì enable_modules trong file  frontend\config\settings.yml
+        - Copy thư mục vtLib trong plugin vào thư mục lib của dự án nhằm tránh lỗi xxs cho phần hiển thị
+
+        - Thêm vào file /frontend/config/frontendConfiguration.class.php:
+
+             static protected $Loaded = false;
+             public function configure()
+             {
+               $this->registerHTMLPurifier();
+             }
+              // load thu vien tranh xxs
+             static public function registerHTMLPurifier()
+             {
+               require_once sfConfig::get('sf_lib_dir').'/vtLib/htmlpurifier/library/HTMLPurifier.auto.php';
+               HTMLPurifier_Bootstrap::registerAutoload();
+               self::$Loaded = true;
+             }
+
+        enabled_modules:        [default, vtFAQ]
+        Khi gọi roting cho tin tức : url_for('@faqs')
+		Khi include_patial/include_comprent gọi ten module như bt
+        copy và xóa thư mục sfNewsPlugin trong thư mục web của plugin vào thư mục web
+3. chạy lệnh 
+	build sql và insert sql
+	- php symfony doctrine:build --all-classes
+	- php symfony plugin:publish-assets
+
+4. nếu muốn cấu hình lại các giá trị vào plugin/sfNewsPlugin cấu hình như các modul bình thường
+
+5. chỉnh sửa css/js cần vào thư mục web/vtFAQPlugin/ để chỉnh sửa theo ý muốn
+6. chỉnh sửa cấu hình db vào thư mục config/doctrine/schema.yml cua plugin
+
+7. Trong trường hợp phân quyền cho modul plugin thì ta thực hiện thêm vào file data/fixtures/fixtures.yml
+        sfGuardPermission:
+          Permission_faqs:
+            name:           vt_faqs_admin
+            description:    "Quyền quản trị câu hỏi thường gặp"
+
+          Permission_vtPlugin:
+            name:           vt_vtplugin_admin
+            description:    "Quyền quản trị plugin"
+
+sau đó chạy lệnh: php symfony doctrine:data-load rồi vào tạo người dùng có gán quyền như bình thường
+
+8. trong trường hợp không cần phân quyền người dùng thì sửa trong file : plugin/vtFAQPlugin/config/app.yml thành:
+    all:
+      tmcTwitterBootstrapPlugin:
+        bootstrap_path:              /tmcTwitterBootstrapPlugin/css/bootstrap.min.css
+        responsive_bootstrap_path:   /tmcTwitterBootstrapPlugin/css/bootstrap-responsive.min.css
+        admin_styles_path:           /tmcTwitterBootstrapPlugin/css/styles.css
+        jquery_path:                 /tmcTwitterBootstrapPlugin/js/jquery.min.js
+        bootstrap_js_path:           /tmcTwitterBootstrapPlugin/js/bootstrap.min.js
+        admin_js_path:               /tmcTwitterBootstrapPlugin/js/global.js
+
+        header:
+          menu:
+            VtPlugin:
+              dropdown:
+                Quản trị câu hỏi thường gặp:
+                  module_name: vtFAQAdmin
+                  route: vt_faqs
+

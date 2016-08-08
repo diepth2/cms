@@ -1,0 +1,8 @@
+#sfGuardPermission:
+#  Permission_slideshow:
+#    name:           vt_slideshow_admin
+#    description:    "Quyền quản trị slideshow"
+
+#  Permission_vtPlugin:
+#    name:           vt_vtplugin_admin
+#    description:    "Quyền quản trị plugin"

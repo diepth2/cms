@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           user
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _edit: ~
+      fields:  ~
+      list:
+        title: Danh sách người chơi
+        display: [userId, username, displayName, trustedIndex, mobile, device, totalMatch, totalWin, total_lost,  cash, gold]
+        actions: {}
+        object_actions: {}
+      filter:
+        class: gvManageUserFormFiltersAdmin
+        display: [lastLoginTime, userId, username, mobile, device]
+      form:    ~
+      edit:    ~
+      new:     ~

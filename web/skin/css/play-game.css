@@ -1,0 +1,13 @@
+*{margin:0;padding:0;}
+body{font-size:12px;line-height:18px;font-family:Arial;background:#000 url(../images/body_bg.png) repeat 0 0;}
+img{border:none;}
+a{outline:none;text-decoration:none;}
+a:hover{text-decoration:underline;}
+button, input, textarea{font-family:Arial;font-size:12px;outline:none;}
+.divclear{display:inline-block;width:100%;float:left;}
+.wrapper{width:960px;margin:0 auto !important;display:block;}
+.heads{height:43px;line-height:43px;background:url(../images/playgame_header_bg.jpg) repeat-x 0 center;}
+.gameplay{height:601px;background:#fff;}
+h1#logo{display:block;width:95px;height:37px;float:left;margin:3px 5px 3px 25px;}
+.heads ul{list-style:none;}
+.heads li{display:inline-block;float:left;*display:inline;zoom:1;padding:0 10px;}

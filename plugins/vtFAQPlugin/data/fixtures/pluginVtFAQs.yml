@@ -1,0 +1,8 @@
+#sfGuardPermission:
+#  Permission_faqs:
+#    name:           vt_faqs_admin
+#    description:    "Quyền quản trị câu hỏi thường gặp"
+#
+#  Permission_vtPlugin:
+#    name:           vt_vtplugin_admin
+#    description:    "Quyền quản trị plugin"

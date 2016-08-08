@@ -1,0 +1,65 @@
+# PHAN QUANG CAO
+# vi tri quang cao
+VtAdvertiseLocation:
+  tableName: vt_advertise_location
+  columns:
+    id: {type: integer(8), primary: true, autoincrement: true, comment: 'ID tu tang'}
+    name: {type: string(200), notnull: true, comment: 'Ten vi tri quang cao'}
+    template: {type: string(200), notnull: false, comment: 'Duong dan toi file template quang cao'}
+
+# Quang cao
+VtAdvertise:
+  tableName: vt_advertise
+  actAs:
+    Timestampable:
+  columns:
+    id: {type: integer(8), primary: true, autoincrement: true, comment: 'ID tu tang'}
+    name: {type: string(200), notnull: true, comment: 'Ten quang cao'}
+    media_path: {type: string(255), notnull: true, comment: 'Duong dan toi file anh hoac flash quang cao' }
+    url: {type: string(255), notnull: true, comment: 'Duong link toi trang can quang cao' }
+    is_active: {type: boolean, default: 0, comment: 'Trang thai kich hoat: 0 - chua kich hoat, 1 - kich hoat'}
+    is_flash: {type: boolean, default: 0, comment: '0 - khong phai file flash, 1 - la file flash'}
+    start_time: { type: timestamp, notnull: true, comment: 'Thoi gian quang cao bat dau co hieu luc' }
+    end_time:
+      type: timestamp
+      notnull: true
+      comment: 'Thoi gian quang cao het hieu luc'
+    priority:
+      type: integer(8)
+      comment: do uu tien
+      default: 0
+  relations:
+    Location:
+      class: VtAdvertiseLocation
+      foreignAlias: AdvertiseLocation
+      refClass: VtAdvertiseLocationItem
+      local: advertise_id
+      foreign: location_id
+
+
+# Quan he giua quang cao va vi tri
+VtAdvertiseLocationItem:
+  tableName: vt_advertise_location_item
+  columns:
+    id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+      comment: ID tu tang
+    advertise_id:
+      type: integer(8)
+      comment: ID cua quang cao
+    location_id:
+      type: integer(8)
+      comment: ID vi tri quang cao
+  relations:
+    Advertise:
+      class: VtAdvertise
+      local: advertise_id
+      foreign: id
+      onDelete: CASCADE
+    Location:
+      class: VtAdvertiseLocation
+      local: location_id
+      foreign: id
+      onDelete: CASCADE

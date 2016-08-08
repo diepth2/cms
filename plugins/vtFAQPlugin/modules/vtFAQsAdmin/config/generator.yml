@@ -1,0 +1,43 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           VtFAQs
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          vt_faqs
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Quản lý câu hỏi thường gặp
+        display:
+          - '=question'
+          - is_active
+          - priority
+          - created_at
+        object_actions:
+          _edit: ~
+          _delete: ~
+
+      filter:
+        display:
+          - question
+      form:
+        display:
+          - question
+          - answer
+          - is_active
+          - priority
+        class: VtFAQsForm
+      edit:
+        title: Trả lời câu hỏi
+      new:
+        title: Thêm mới câu hỏi
+      show:    ~
+      revert:  ~

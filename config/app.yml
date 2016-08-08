@@ -1,0 +1,81 @@
+all:
+  sf_captchagd:
+     image_width:                180 # image width in pixels
+     image_height:               22 # image height in pixels
+     chars:                      "2345678abcdefhjkmnprsuxyz" # possible chars in captcha
+     length:                     2 # length of captcha
+     font_size:                  20 # font size
+     force_new_captcha:          true # if true - captcha regenerated EVERY request, even if user input true value before
+     fonts: ["akbar/vavobi.ttf"]
+  
+  image_maxsize: 5242880
+  upload_max_size:   10485760
+  excel_max_row: 1000
+  category_images: category_images
+  flash: flash
+  article_images: article
+  service_images: service
+  advertise_images: advertise
+  product_images: products
+  album_images: album
+  import_max_size: 20971520
+  prepaid: 268
+  postpaid: 271
+  
+#  url_media_default_file: http://localhost:8086/images/default-image.jpg
+
+  upload_media_file: /var/www/vuagame/web/uploads
+  upload_avatar_dir: E:\2015\xampp\htdocs\vuagame\web\media\vuagameAvatars\upload
+  url_media_file: http://vuagame.vn/uploads
+  url_media_default_file: http://vuagame.vn/images/default-image.jpg
+
+  #upload_media_file: D:\data\Project\QT01_13068_VAS_VTP2.0\06.SOURCE\Draft\VTP2.0\web/uploads
+  #url_media_file: http://192.168.174.52:9872/uploads
+  #url_media_default_file: http://192.168.174.52:9872/images/default-image.jpg
+
+  image_default:
+    default: '/img/default.png'
+    img1: '/themeWap/default/default1.jpg'
+    img2: '/themeWap/default/default2.jpg'
+    img3: '/themeWap/default/default3.jpg'
+    slide: '/themeWap/default/slide.jpg'
+    product: '/themeWap/default/product.jpg'
+    product_slide: '/themeWap/default/slide-product.jpg'
+    service: '/themeWap/default/service.jpg'
+    article_295_150: '/img/site-news-top.jpg'
+    article_63_63: '/img/news-1.jpg'
+    service_icon_112_122: '/img/icon_phone.png'
+    service_news_92_54: '/img/dich-vu-moi-11.jpg'
+    service_225_335: '/img/hight-school.jpg'
+    service_322_334: '/img/r4.png'
+    link_32_32: '/img/icon-link.jpg'
+    service_news_92_54: '/img/service_news.jpg'
+    article_270_180: '/img/article270.jpg'
+    article_52_50: '/img/article5250.jpg'
+    article_180_110: '/img/article180_110.png'
+    article_83_81: '/img/tin-tuc-7.png'
+    creative_54_54: '/img/sang-tao.png'
+    product_71_71: '/img/dt-1.jpg'
+    service_vas_90_52: '/img/danh-sach-cua-hang.png'
+    product_210_210: '/img/m1.jpg'
+    product_324_328: '/img/d-full.jpg'
+    product_88_88: 'img/d2.jpg'
+#  upload_media_file: /home/hoangl/app/VTP2.0/web/uploads
+#  url_media_file: http://10.61.9.202:5678/uploads
+
+  ckeditor:
+    basePath: /js/ckeditor
+  ckfinder:
+    active: true
+    basePath: /js/ckfinder
+  addcslashes_charlist: "%_-\'"  # Danh sach cac ky tu dac biet can xu ly truoc khi su dung search query
+      
+# Cau hinh id cua chuyen muc Dich vu gia tri gia tang
+  vas_services_id: 229
+  link_list_store: http://shop.viettel.vn/
+  link_checkout: http://shop.viettel.vn/
+  #GOOGLE_API_KEY: 'AIzaSyDi5kW5txMaOY2APb2sR8MHmGXHb-dTnCE'
+  GOOGLE_API_KEY: 'AIzaSyDNLpCBii2o5tK4fbXMbuKqcNnLBC10XJw'
+  
+ 
+  

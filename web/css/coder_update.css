@@ -1,0 +1,601 @@
+﻿#site-services .icons .title {
+    padding: 30px 0 20px;
+    text-transform: uppercase;
+}
+
+#nav-menu {
+    width: 100%;
+}
+
+#site-content {
+    width: 100%;
+    float: left;
+}
+
+#dich-vu-6 .item:hover .box .bg-hover {
+    display: block;
+    -ms-opacity: .8;
+    opacity: .8;
+}
+
+#dich-vu-6 .item .box .bg-hover {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.title-link {
+    color: #222222 !important;
+}
+
+#site-links .col-three .box {
+    height: 150px;
+}
+
+a img {
+    border: none;
+}
+
+.captcha-survey {
+    height: 42px;
+    width: 80px;
+    padding: 0px 10px;
+    border: 1px solid rgb(194, 194, 194);
+    vertical-align: middle;
+}
+
+.btn-survey {
+    background: #BFBFBF;
+    border: 0 solid rgba(0, 0, 0, 0);
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    width: 130px;
+}
+
+#td-captcha-survey a {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#td-captcha-survey a img {
+    height: 42px;
+    margin-left: 10px;
+    width: 100px;
+}
+
+#survey-result .box-message .results .c3 {
+    top: -11px;
+}
+
+#social-network li {
+    line-height: 0px;
+    margin-top: 100px;
+}
+
+.box-title .title a {
+    color: #009591;
+    font-size: 19px;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+#menu li .sub-menu {
+    min-width: 480px;
+    max-width: 720px;
+}
+
+.promotion{
+    margin-top: 10px;
+}
+
+#promotion-news select{
+    padding: 3px;
+    border: 1px solid #C3C3C3;
+    min-width: 160px;
+}
+.btn-promotion{
+    padding: 2px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.answer-body{
+    display: none;
+    list-style: none;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f2f2f2;
+}
+.show{
+    display: block;
+}
+.ques-active{
+    display: block;
+}
+
+.a-question{
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+}
+
+
+#global-search .dropdown-box {
+    background:#fff;
+    margin-top:0;
+    float:left;
+    border:1px solid #cfcfcf;
+    border-top:0;
+    position:absolute;
+    z-index:10;
+    width:300px;
+    top:33px;
+}
+
+#global-search .dropdown-box a{
+    line-height:normal;
+    padding:0;
+    color:#666;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+#global-search .dropdown-box span{
+    color:#999;
+    font-size:12px;
+}
+
+#global-search .dropdown-box strong{
+    color:#0478c5;
+    font-weight:normal;
+}
+
+#global-search .dropdown-box h1{
+    background:#98c0df;
+    color:#000000;
+    padding:5px;
+    text-align:left;
+    font-size: 14px;
+}
+
+.dropdown-box .suggest-singer,.dropdown-box .suggest-album,.dropdown-box .suggest-video,.dropdown-box .suggest-song{
+    float:left;
+    text-align:left;
+    border-top:1px solid #e8e8e8;
+}
+
+.dropdown-box .title-search{
+    background:#99c0df;
+    padding:7px 10px;
+    font-weight:bold;
+}
+
+
+.dropdown-box h3{
+    float:left;
+    width:48px;
+    height:45px;
+    text-indent:-9999px;
+    background:#FF0;
+    padding:0;
+}
+
+.dropdown-box h4{
+    float:left;
+    width:280px;
+    padding:15px 10px 5px 10px;
+}
+
+.dropdown-box h4 span{
+    font-weight:normal;
+    color:#959595;
+}
+
+.dropdown-box .suggest-song h3{
+    background:url(../images/imuzik_61.png) no-repeat center 10px;
+}
+
+.dropdown-box .suggest-singer h3{
+    background:url(../images/imuzik_61_a.png) no-repeat center 10px;
+}
+
+.dropdown-box .suggest-video h3{
+    background:url(../images/imuzik_59.png) no-repeat center 14px;
+}
+
+.dropdown-box .suggest-singer,.dropdown-box .suggest-album{
+    background:#fafafa;
+}
+
+.dropdown-box .suggest-album h3{
+    background:url(../images/imuzik_61a.png) no-repeat center 10px;
+}
+
+.dropdown-box .list{
+    float:left;
+    width:280px;
+    padding: 0 10px;
+}
+
+.dropdown-box .list{
+    float:left;
+    width:280px;
+    padding-bottom:5px;
+}
+
+.dropdown-box .list li{
+    float:left;
+    width:100%;
+    padding:5px 0;
+}
+
+.dropdown-box .suggest-singer .images,.dropdown-box .suggest-album .images,.dropdown-box .suggest-video .images,.dropdown-box .suggest-song .images{
+    float:left;
+    width:42px;
+    height:42px;
+    background:url(../images/imuzik_78.png) no-repeat;
+    margin-right:8px;
+}
+
+.dropdown-box .suggest-singer img,.dropdown-box .suggest-album img,.dropdown-box .suggest-video img,.dropdown-box .suggest-song img{
+    margin:1px 0 0 0;
+    width:36px;
+    height:36px;
+    float:left;
+    margin-right:10px;
+}
+
+.dropdown-box .suggest-singer .name,.dropdown-box .suggest-album .name,.dropdown-box .suggest-video .name,.dropdown-box .suggest-song .name{
+    float:left;
+    display:block;
+}
+
+.dropdown-box .suggest-song .name{
+    width:195px;
+    line-height:18px;
+}
+
+.dropdown-box .suggest-video .images{
+    width:69px;
+    height:42px;
+    background:url(../images/imuzik_79.png) no-repeat;
+}
+
+.dropdown-box .suggest-video img{
+    width:63px;
+    height:36px;
+}
+
+.paging .pages .page a {
+    vertical-align: middle;
+}
+
+#about-tab{
+    margin-top: 30px;
+}
+
+.hidden-tab{
+    display:none;
+}
+.block-tab{
+    display: block!important;
+}
+
+.error{
+    color: red;
+}
+.flash-err{
+    background: #FA6363;
+    line-height: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    color: #009591;
+    font-size: 15px;
+    text-align: center;
+}
+.flash-sucess{
+    background: #efefef;
+}
+
+.news-item a.title{
+    max-height: 80px;
+    text-align: justify;
+}
+.home-page #site-services p {
+    text-align: justify;
+}
+.home-page .news-item .description{
+    min-height: 35px;
+}
+.news-item.news-item-top a h3{
+    min-height: 50px;
+}
+#tin-tuc-items .item-top .content .lead{
+    font-size: 14px;
+    text-align: justify;
+}
+#tin-tuc-items .items-top .item {
+    min-height: 58px;
+}
+
+.view-more{
+    float: right;
+}
+.view-more a{
+    color: #222222;
+}
+.view-more a:hover{
+    color: #009591;
+}
+#site-top .menu li a{
+    text-transform: uppercase;
+}
+#site-top .menu {
+    margin: 45px 0;
+}
+#logo-viettel {
+    margin: 10px 0;
+}
+#site-top {
+    height: 105px;
+}
+#slider-1 {
+    margin-top: 110px;
+}
+
+.isoftz-slider .button-back{
+    top: 80px;
+}
+.isoftz-slider .button-next{
+    top: 80px;
+}
+.error_list {
+    list-style: none;
+    margin: 0;
+    color: red;
+}
+/*CSS product new*/
+.product-name-new{
+    color: #000!important;
+    font-size: 18px !important;
+    line-height: none !important;
+    padding: 0px !important;
+}
+.icon-stats {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/Stats.png) no-repeat left top;
+}
+
+.icon-new {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/New.png) no-repeat left top;
+}
+#account [class^="icon-"],
+#duong-day-nong [class^="icon-"],
+#thong-tin-ho-tro [class^="icon-"],
+#dai-gia-sang-tao [class^="icon-"],
+#dich-vu-moi [class^="icon-"],
+#tin-khuyen-mai [class^="icon-"],
+#new-products [class^="icon-"] {
+    float: left;
+}
+
+.des-product{
+    margin: 13px 0px;
+}
+.price-product{
+    margin: 18px 0px;
+}
+.div-pro-name{
+    height: 30px;
+}
+.div-description{
+    height: 65px;
+}
+.product-name-detail{
+    margin: 24px 0px;
+}
+
+.list-store{
+    font-style: italic;
+}
+.list-store:hover{
+    text-decoration: underline;
+}
+.title-vas{
+    font-size: 17px !important;
+}
+/*css diem giao dich*/
+.dropdown-city{
+    width: 275px !important;
+    border: 1px solid #ACACAC;
+    padding: 6px 5px;
+}
+.count-result{
+    margin-top: 10px;
+}
+.location-detail{
+    color: #000;
+}
+ul.override{
+    /*height: 600px;*/
+}
+
+/*css for tab register*/
+ul.tabs {
+    margin:0 0 0 -1px;
+    padding:0;
+    float: left;
+    list-style: none;
+    height:25px;
+    width:100%;
+}
+ul.tabs li {
+    float: left;
+    margin:0;
+    padding:0;
+    height:30px;
+    line-height:30px;
+    border-left: none;
+    margin-bottom: -1px;
+    position: relative;
+    background: url(../images/peru_26c.jpg) repeat-x;
+    margin-left:1px;
+    top: -5px;
+}
+ul.tabs span {
+    margin:0;
+    padding:0;
+    height:30px;
+    display:block;
+    background: url(../images/peru_26b.jpg) no-repeat top left;
+}
+
+ul.tabs li a {
+    text-decoration: none;
+    color:#1e8d97;
+    font-weight:normal;
+    text-align:center;
+    display:block;
+    padding:0 30px;
+    outline: none;
+    background:url(../images/peru_26.jpg) no-repeat top right;
+    min-width:65px;
+}
+ul.tabs li:hover {
+    background: url(../images/peru_26c.jpg) repeat-x 0 -30px;
+}
+ul.tabs li:hover span{
+    background: url(../images/peru_26b.jpg) no-repeat bottom left;
+}
+ul.tabs li a:hover {
+    background: url(../images/peru_26.jpg) no-repeat bottom right;
+}
+html ul.tabs li.active {
+    background: url(../images/peru_26c.jpg) repeat-x 0 -30px;
+    top: -4px;
+}
+html ul.tabs li.active span{
+    background: url(../images/peru_26b.jpg) no-repeat bottom left;
+}
+html ul.tabs li.active a {
+    color:#1E8D97;
+    background:url(../images/peru_26.jpg) no-repeat bottom right;
+    font-weight: bold;
+}
+.tab_container {
+    border: 1px solid;
+    clear:both;
+    background:#fff;
+    color:#ccc;
+    width: 1000px;
+}
+form.register {
+    margin: 50px 10px 10px;
+}
+
+/*CSS idea*/
+.btn-idea{
+    width: 90px;
+}
+.active-like{
+    border-color: #009591!important;
+    color: #009591!important;
+}
+#register-home-service-form table td #home-service li {
+    width: 230px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#site-box-register .box-full {
+    float: left;
+    width: 1000px;
+}=======
+.icon-search-28x28{
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAABa1BMVEUiHx8jHx8iHx4iHh4jHx8iHx8jHx4iHh4iHx4iHx8iHx8jHx8iHx8iHx8jHx8iHx8jHx8iHh4jHx8iHx8iHx8iHx8jHx8jHx8iHx8iHx8jHx8iHx8jHx8jHx8iHx8iHx8iHh4iHx8iHh4jHx8jHx8iHx8jHx8iHx8jHx8iHx8iHx8iHx8jHx8jHx8iHx4iHx8jHx8jHx8jHx8iHx8iHx4iHx8jHx8iHh4jHx8jHx8iHx8iHh4iHx4jHx8jHx8jHx8iHh4iHx8iHx8jHx8iHx8iHx4jHx8iHx8jHx4iHx8iHx8iHx4jHx8iHx8iHx8jHx8iHx4iHh4iHh4jHx8iHx4iHx4jHx8jHx8iHx4iHx8iHx4iHx8iHx8iHx8iHh4iHx8jHx8iHx4iHx4iHx8iHh4jHx8iHx8jHx8iHx8iHx4jHx8iHh4iHx8jHx8jHx8iHx8jHx8iHx8iHx8iHh8iHx4iHx8iHx4jHx8jHx9+MNZhAAAAeXRSTlMAAAAAZmYAZmZQRgkRGEBOCCwQCl5kI0YjZQpjYgtWAS86EGQiO0oMBFpfOCAcCT4xVDIUWQQvCBgDJmNPDkwoTEQQPRlGJFwJVA1EJUMIHwhWHF4aXD8zZDMQQlVFBWFgTkFKWEJNFAY6V0QfMAYTEgsFSQdPPEMsb5xhsAAAARZJREFUeF5lzEOXBEEQhdGIzMhS08bYtm3btq2fP5ndVTOL/jbvnLt4gIiclw1XjnpLJgAAQaW0u7SOhCBDVHn+NdgqwvUVnsYuU0/1OZrJiv1qjoBYEyiPNEAhL53lIK/Ip6jWhTK4Tnc0gaPYLFq4DB5FG9gqt73f7ATZZKIHEZWqemdTc0oH0oMoA7sh3a1mJJIfx336mJpxPYqIjBUeXJvTM5qmQZzmkQHTpAKyBX0xB7KlbGL5T1dWjTVQsSitb9jqehdbXAUMt2lnd0+qP36g0+ERIDCpGDgWJ6ex8wshLq8M68ZW7r69I6Lw/QOGTMN6shXAH3x+eWWAEPJR7M1RRClKIWmS9VGkmPmkr2KF5PfPL5D/H++sEkO1AAAAAElFTkSuQmCC") no-repeat scroll 4px 4px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+}
+#idea-group-keyword {
+    width: 300px;
+    /*float: right;*/
+}
+.span-keyword{
+    padding-left: 15px;
+}
+#idea-group-search-button{
+    right: 70px;
+    top: 2px;
+}
+    
+.flash-err-idea{
+    color: #fa6363;
+}
+#register-home-service-form table td #home-service input{
+    width: auto;
+    display: inline-block;
+    padding-bottom:5px;
+    vertical-align: baseline;
+}
+.error_list {
+    color: red;
+}
+
+#site-services .icons .icon-link {
+    background: #d0d0d0;
+    display: inline-block;
+    width: 112px;
+    height: 112px;
+}
+
+#site-services .icons .icon-link:hover,#site-services .icons .icon-link-active {
+    background: #26c5c5;
+}
+
+#register-home-service-form table td {
+    padding-bottom: 8px;
+}
+
+#tien-ich-all ul#categories {
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+#tien-ich-all ul#categories ul li a:hover {
+    font-weight: normal;
+    color: red;
+}
+
+#site-box .block .block-content p {
+    line-height: 26px;
+}
+
+.roaming_table {
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+p, a, h1, h2, h3, h4, h5, span, label{
+    overflow: hidden;
+}
+.survey button{
+    padding: 10px 13px;
+}

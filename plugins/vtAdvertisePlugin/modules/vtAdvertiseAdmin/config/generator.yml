@@ -1,0 +1,48 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           VtAdvertise
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          vt_advertise
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Danh sách quảng cáo
+        display:
+          - media_path
+          - '=name'
+          - url
+          - is_active
+          - start_time
+          - end_time
+        fields:
+          media_path:
+            is_partial: true
+          start_time:
+            is_partial: true
+          end_time:
+            is_partial: true
+        object_actions:
+          _edit: ~
+          _delete: ~
+      filter:
+        display:
+          - location_list
+      form:
+        display:
+          NONE: [name, url, start_time, end_time]
+          Others: [is_active, priority, location_list,media_path]
+      edit:
+        title:  Chỉnh sửa quảng cáo
+      new:
+        title: Thêm mới quảng cáo
+      show:    ~
+      revert:  ~

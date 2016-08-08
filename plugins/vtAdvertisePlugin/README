@@ -1,0 +1,100 @@
+1. Cài đặt ckedittor
+
+2. enable modul trong file setting.yml
+	enable trong file config\ProjectConfiguration.class.php: 
+		 $this->enablePlugins(array(		
+		  'sfCKEditorPlugin',
+		  ....
+		  'vtAdvertisePlugin',
+		));
+		
+    Đối với cms thêm vào file admin\config\settings.yml:
+        enabled_modules:        [default, sfCKEditor, vtAdvertisePlugin ]
+
+    Khi sử dụng cho frontend thì enable_modules trong file  frontend\config\settings.yml
+
+
+        enabled_modules:        [default, vtAdvertiseAdmin]
+
+		Khi include_patial/include_comprent gọi ten module như bt
+
+3. chạy lệnh 
+	build sql và insert sql
+	- php symfony doctrine:build --all-classes
+	- php symfony plugin:publish-assets
+
+4. nếu muốn cấu hình lại các giá trị vào plugin/vtAdvertisePlugin cấu hình như các modul bình thường
+
+5. chỉnh sửa css/js cần vào thư mục web/vtAdvertisePlugin/ để chỉnh sửa theo ý muốn
+6. chỉnh sửa cấu hình db vào thư mục config/doctrine/schema.yml cua plugin
+
+7. Trong trường hợp phân quyền cho modul plugin thì ta thực hiện thêm vào file data/fixtures/fixtures.yml
+        sfGuardPermission:
+          Permission_adv:
+            name:           vt_adv_admin
+            description:    "Quyền quản trị quảng cáo"
+
+          Permission_vtPlugin:
+            name:           vt_vtplugin_admin
+            description:    "Quyền quản trị plugin"
+
+sau đó chạy lệnh: php symfony doctrine:data-load rồi vào tạo người dùng có gán quyền như bình thường
+
+8. trong trường hợp không cần phân quyền người dùng thì sửa trong file : plugin/vtFAQPlugin/config/app.yml thành:
+    all:
+      slide_maxsize: 2097152
+      tmcTwitterBootstrapPlugin:
+        bootstrap_path:              /tmcTwitterBootstrapPlugin/css/bootstrap.min.css
+        responsive_bootstrap_path:   /tmcTwitterBootstrapPlugin/css/bootstrap-responsive.min.css
+        admin_styles_path:           /tmcTwitterBootstrapPlugin/css/styles.css
+        jquery_path:                 /tmcTwitterBootstrapPlugin/js/jquery.min.js
+        bootstrap_js_path:           /tmcTwitterBootstrapPlugin/js/bootstrap.min.js
+        admin_js_path:               /tmcTwitterBootstrapPlugin/js/global.js
+
+        header:
+          menu:
+            VtPlugin:
+              credentials: [vt_vtplugin_admin]
+              dropdown:
+                Quản trị quảng cáo:
+                  credentials: [vt_adv_admin]
+                  route: vt_advertise
+
+9. Cac vi tri quang cao duoc fix cung gia tri va day vao db bang tay
+    vi du: vi tri footer cua web ta đạt là FOOTER
+        khi muốn gọi các quảng cáo ở vị trí là FOOTER ta thêm :
+        <?php include_component('vtAdvertiseWap', 'listByLocation', array('locationName' => 'WEB_FOOTER')) ?>
+        <?php include_component('vtAdvertiseWeb', 'listByLocation', array('locationName' => 'WAP_FOOTER')) ?>
+
+10. Cac vi tri quang cao mac dinh Add vao bang locationAdv
+có thể copy các vị trí quảng cáo vào file data/fixtures/fixtures.yml sau đó chạy lệnh php symfony doctrine:data-load
+
+    VtAdvertiseLocation:
+      Adv_header_Wap:
+        name: WAP_HEADER
+        template: Quảng cáo ở đầu Wap
+      Adv_Footer_Wap:
+        name: WAP_FOOTER
+        template: Quảng cáo ở cuối Wap
+      Adv_Center_Wap:
+        name: WAP_CENTER
+        template: Quảng cáo ở giữa Wap
+
+      Adv_header_Web:
+        name: WEB_HEADER
+        template: Quảng cáo ở header Web
+      Adv_footer_Web:
+        name: WEB_FOOTER
+        template: Quảng cáo ở footer Web
+      Adv_left_Web:
+        name: WEB_LEFT
+        template: Quảng cáo ở trái Web
+      Adv_right_Web:
+        name: WEB_RIGHT
+        template: Quảng cáo ở phải Web
+
+có thể thêm các vị trí quảng cáo khác vào trong bảng vt_local_adv và cấu hình khi gọi ra như phần thêm mới
+ví dụ: thêm mới vào bảng vt_local_adv là : RIGHT_WAP thì khi gọi mới cấu hình cũng phải gọi như sau:
+    <?php include_component('vtAdvertiseWeb', 'listByLocation', array('locationName' => 'RIGHT_WAP')) ?>
+
+11. có thể cấu hình cache cho phần quảng cáo như cấu hình cache bình thường

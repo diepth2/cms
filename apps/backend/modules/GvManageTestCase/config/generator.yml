@@ -1,0 +1,36 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           GvTestCase
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          gv_test_case
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _list: {label: Quay trở lại danh sách}
+        _save: {label: Lưu}
+        _delete: {label: Xóa}
+        _edit: {label: Chi tiết}
+      fields:
+        test_key: {label: Tên test case}
+        value: {label: Giá trị}
+        game_id: {label: Game}
+        status: {label: Trạng thái}
+      list:
+        title : Danh sách test case
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
+      filter:  ~
+      form:
+        class: gvManageTestCaseFormsAdmin
+      edit:
+        title: Chỉnh sửa test case
+      new:
+        title: Tạo mới test cases

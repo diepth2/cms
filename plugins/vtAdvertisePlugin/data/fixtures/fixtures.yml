@@ -1,0 +1,35 @@
+sfGuardPermission:
+  Permission_adv:
+    name:           vt_adv_admin
+    description:    "Quyền quản trị quảng cáo"
+#
+#  Permission_vtPlugin:
+#    name:           vt_vtplugin_admin
+#    description:    "Quyền quản trị plugin"
+
+VtAdvertiseLocation:
+  Adv_header_Wap:
+    name: WAP_HEADER
+    template: Quảng cáo ở đầu Wap
+  Adv_Footer_Wap:
+    name: WAP_FOOTER
+    template: Quảng cáo ở cuối Wap
+  Adv_Center_Wap:
+    name: WAP_CENTER
+    template: Quảng cáo ở giữa Wap
+
+  Adv_header_Web:
+    name: WEB_HEADER
+    template: Quảng cáo ở header Web
+  Adv_footer_Web:
+    name: WEB_FOOTER
+    template: Quảng cáo ở footer Web
+  Adv_left_Web:
+    name: WEB_LEFT
+    template: Quảng cáo ở trái Web
+  Adv_right_Web:
+    name: WEB_RIGHT
+    template: Quảng cáo ở phải Web
+
+
+

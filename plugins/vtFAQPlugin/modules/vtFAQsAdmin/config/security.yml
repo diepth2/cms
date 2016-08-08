@@ -1,0 +1,15 @@
+all:
+  credentials: vt_faqs_admin
+
+secure:
+  is_secure: false
+
+signin:
+  is_secure: false
+
+signout:
+  is_secure: false
+
+myAccount:
+  is_secure: true
+  credentials:  admin

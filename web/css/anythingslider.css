@@ -1,0 +1,39 @@
+#slider-1 div.anythingControls {
+    margin-top: -100px;
+}
+
+#slider-1 ul.thumbNav {
+    list-style: none;
+    width: 1000px;
+    margin: 0 auto;
+    z-index: 700;
+    position: relative;
+}
+
+#slider-1 .thumbNav li {
+    float: left;
+    padding: 3px;
+}
+
+    #slider-1 .thumbNav li a {
+        border: 1px solid #fff;
+        display: block;
+        width: 15px;
+        height: 15px;
+        color: transparent;
+    }
+
+        #slider-1 .thumbNav li a.cur {
+            background: #fff;
+        }
+
+
+#slider-1 .anythingWindow {
+    position: relative;
+}
+
+    #slider-1 .anythingWindow ul {
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+    }
