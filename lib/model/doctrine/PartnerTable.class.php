@@ -18,6 +18,8 @@ class PartnerTable extends Doctrine_Table
     }
     public static function getListPartnerForSelectBox()
     {
+        $i18n = sfContext::getInstance()->getI18N();
+        $listType[""] = $i18n->__("Tất cả");
         $arrType = PartnerTable::getInstance()->createQuery('a')
             ->select('a.partnerid, a.partnername')->fetchArray();
         foreach($arrType as $valType){

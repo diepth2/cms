@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="EN" target-language="vi" datatype="plaintext" original="messages" date="2012-08-14T05:42:04Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>User</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Username</source>
+                <target>Tên đăng nhập</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Display name</source>
+                <target>Tên hiển thị</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Trusted index</source>
+                <target>Chỉ số tín nhiệm</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Total match</source>
+                <target>Tổng số trận</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Total win</source>
+                <target>Số trận thắng</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Total lost</source>
+                <target>Số trận thua</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Cash</source>
+                <target>Xu</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Gold</source>
+                <target>Ken</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

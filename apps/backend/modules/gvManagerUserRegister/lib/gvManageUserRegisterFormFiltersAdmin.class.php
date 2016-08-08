@@ -15,9 +15,8 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
     public function configure()
     {
         $i18n = sfContext::getInstance()->getI18N();
-        $arr_type = array_merge(array('' => $i18n->__("Tất cả")), ClientTypeTable::getListClientTypeForSelectBox());
-        $arr_cp = array_merge(array('' => $i18n->__("Tất cả")), PartnerTable::getListPartnerForSelectBox());
-
+        $arr_type =  ClientTypeTable::getListClientTypeForSelectBox();
+        $arr_cp = PartnerTable::getListPartnerForSelectBox();
         $this->setWidgets(array(
             'clientId' => new sfWidgetFormChoice(array('choices' => $arr_type), array('add_empty' => true)),
             'ip'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -31,7 +30,7 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
         $this->setValidators(array(
             'clientId' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_type))),
             'ip'     => new sfValidatorPass(array('required' => false)),
-            'cp' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_type))),
+            'cp' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
             'registedtime' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),

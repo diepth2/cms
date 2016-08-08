@@ -1,0 +1,12 @@
+## YAML Template.
+---
+indexSuccess:
+  metas:
+    title: Danh sách người chơi
+  stylesheets:
+    - bootstrapDaterangepickerMaster/daterangepicker-bs2.css
+
+  javascripts:
+    - jquery.min.js
+    - bootstrapDaterangepickerMaster/moment.min.js
+    - bootstrapDaterangepickerMaster/daterangepicker.js
