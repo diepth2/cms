@@ -16,4 +16,13 @@ class UserInfoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('UserInfo');
     }
+    public static function getTotalUserByOs()
+    {
+        $query = UserInfoTable::getInstance()->createQuery('a')
+            ->select("count(a.clientId) as sum_os, c.name as os_name, a.clientId ");
+        $query ->groupBy("a.clientId");
+        $query->leftJoin("a.ClientType c");
+        $query->orderBy("sum_os desc");
+        return $query->fetchArray();
+    }
 }

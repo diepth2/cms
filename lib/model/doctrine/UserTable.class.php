@@ -16,4 +16,13 @@ class UserTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('User');
     }
+    public static function getRegisterInfo($created_at)
+    {
+        return UserTable::getInstance()->createQuery('a')
+            ->select ('count(*), date(registedTime)')
+            ->groupby("date(registedTime)")
+            ->where("a.registedTime > ?", $created_at)
+            ->fetchArray();
+    }
+
 }
