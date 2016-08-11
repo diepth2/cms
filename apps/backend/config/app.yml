@@ -28,6 +28,9 @@ all:
           dropdown:
             Quản lý tiền phế trong game:
               credentials: [[admin]]
+              route: revenue_game
+            Quản lý kịch sử tiền chơi game:
+              credentials: [[admin]]
               route: money_log
         Quản lý game:
           credentials: [[admin]]

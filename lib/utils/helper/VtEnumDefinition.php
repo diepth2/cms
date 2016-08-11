@@ -20,12 +20,18 @@ abstract class VtCommonEnum {
     const NUMBER_EIGHT=8;
     const NUMBER_SIXTEEN=16;
 
-    const NewCategory='N';
-    const ServiceCategory='S';
-    const MainMenu='0';
-    const FooterMenu='1';
-
-    const portalDefault=0;
-    const portalKhdn=1;
 }
+final class VtUserStatus {
+    /* Trạng thái của Dev */
+    const NOT_ACTIVE = 0;       //0: Chưa kích hoạt,
+    const DEV_ACTIVE = 1;           //1: hoạt động,
+    const USER_DEV_WARNING = 2;          //2: Bị cảnh cáo,
+    const USER_DEACTIVE = 3;         //3: Bị đình chỉ
+}
+final class TypeGame {
+    /* Trạng thái của Dev */
+    const GOLD_MODE = 0;       //0: free
+    const CASH_MODE = 1;           //1: tiền thật
+}
+
 

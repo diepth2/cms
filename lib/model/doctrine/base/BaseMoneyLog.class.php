@@ -25,6 +25,8 @@ Doctrine_Manager::getInstance()->bindComponent('MoneyLog', 'doctrine');
  * @property timestamp $insertedtime
  * @property string $cp
  * @property string $description
+ * @property UserInfo $UserInfo
+ * @property Game $Game
  * 
  * @method integer   getLogid()         Returns the current record's "logid" value
  * @method string    getUuid()          Returns the current record's "uuid" value
@@ -44,6 +46,8 @@ Doctrine_Manager::getInstance()->bindComponent('MoneyLog', 'doctrine');
  * @method timestamp getInsertedtime()  Returns the current record's "insertedtime" value
  * @method string    getCp()            Returns the current record's "cp" value
  * @method string    getDescription()   Returns the current record's "description" value
+ * @method UserInfo  getUserInfo()      Returns the current record's "UserInfo" value
+ * @method Game      getGame()          Returns the current record's "Game" value
  * @method MoneyLog  setLogid()         Sets the current record's "logid" value
  * @method MoneyLog  setUuid()          Sets the current record's "uuid" value
  * @method MoneyLog  setLogstamp()      Sets the current record's "logstamp" value
@@ -62,6 +66,8 @@ Doctrine_Manager::getInstance()->bindComponent('MoneyLog', 'doctrine');
  * @method MoneyLog  setInsertedtime()  Sets the current record's "insertedtime" value
  * @method MoneyLog  setCp()            Sets the current record's "cp" value
  * @method MoneyLog  setDescription()   Sets the current record's "description" value
+ * @method MoneyLog  setUserInfo()      Sets the current record's "UserInfo" value
+ * @method MoneyLog  setGame()          Sets the current record's "Game" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -244,6 +250,12 @@ abstract class BaseMoneyLog extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('UserInfo', array(
+             'local' => 'userId',
+             'foreign' => 'userId'));
+
+        $this->hasOne('Game', array(
+             'local' => 'gameId',
+             'foreign' => 'gameId'));
     }
 }

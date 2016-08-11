@@ -2105,6 +2105,9 @@ MoneyLog:
       default: ''
       notnull: true
       autoincrement: false
+  relations:
+    UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: MoneyLogs }
+    Game:       { class: Game, local: gameId, foreign: gameId, type: one, foreignAlias: MoneyLogs }
 MoneyTransaction:
   connection: doctrine
   tableName: money_transaction

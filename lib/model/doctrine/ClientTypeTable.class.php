@@ -27,4 +27,13 @@ class ClientTypeTable extends Doctrine_Table
         }
         return $listClientType;
     }
+    public static  function getListOs($os_id = null)
+    {
+        $sql =   ClientTypeTable::getInstance()->createQuery('a')
+            ->select('a.clientId, a.name');
+        if($os_id){
+            $sql->andWhere("a.clientId =?", $os_id);
+        }
+        return $sql->fetchArray();
+    }
 }

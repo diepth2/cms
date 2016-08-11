@@ -33,6 +33,11 @@ class VtHelper
         $passwordVal = $toLowerUsername . $password;
         return base64_encode(sha1(mb_convert_encoding($passwordVal, 'utf-16le', 'ascii'), true));
     }
+    public static function number_format($money = 0, $dec_point = '.' , $thousands_sep = ','){
+        $arr = explode('.', sprintf("%.2f", $money));
+        $decimal = (count($arr) > 1 && $arr[1] != '00') ? 2 : 0;
+        return number_format($money, $decimal, $dec_point, $thousands_sep);
+    }
 
     public static function SHA1EncryptPassword($algorithm,$salt, $password) {
 

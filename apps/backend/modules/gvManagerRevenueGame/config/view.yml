@@ -1,0 +1,19 @@
+## YAML Template.
+---
+indexSuccess:
+  metas:
+    title: Thống kê phế theo ngày.
+
+  stylesheets:
+    - backend/mypagination.be.css
+#    - select2/select2.css
+#    - select2/select2.min.css
+
+  javascripts:
+    - amcharts/amcharts.js
+    - amcharts/serial.js
+    - frontend/myjs_datepicker.js
+    - jquery.ui.datepicker.js
+
+  #has_layout:     true
+  #layout:         layout

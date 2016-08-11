@@ -1,0 +1,68 @@
+﻿div.pagination-be {
+    padding: 3px;
+    margin: 3px;
+    text-align:center;
+}
+
+div.pagination-be a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #0084d6;
+
+    text-decoration: none; /* no underline: #00908c */
+    color: #0084d6;
+}
+
+div.pagination-be a:hover, div.digg a:active {
+    border: 1px solid #0084d6;
+
+    color: #000;
+}
+
+div.pagination-be span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #0084d6;
+
+    font-weight: bold;
+    background-color: #0084d6;
+    color: #FFF;
+}
+
+div.pagination-be span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #EEE;
+
+    color: #DDD;
+}
+
+.ui-table-header-chart {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.ui-table-pody {
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+}
+
+.ui-height-34 {
+    height: 34px;
+    width: 140px;
+}
+
+.ui-text-center {
+    text-align: center;
+}
+
+input.date {
+    width: 118px;
+}

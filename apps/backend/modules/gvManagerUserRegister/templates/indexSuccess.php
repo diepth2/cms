@@ -36,20 +36,6 @@
                     <div class="pull-right"><?php include_partial('gvManagerUserRegister/list_actions', array('helper' => $helper)) ?></div>
                 </div>
             </div>
-
-            <table style="width:100%">
-                <tr>
-                    <th><?php echo __("Tổng số")?></th>
-                    <?php foreach ($total_by_os as $total){
-                            echo "<th class='sf_admin_text'>" . $total['os_name'] . "<th>";
-                    }  ?>
-                </tr>
-                <tr>
-                    <?php foreach ($total_by_os as $total){
-                        echo "<td>" . $total['sum_os'] . "<td>";
-                    }  ?>
-                </tr>
-            </table>
             <?php include_partial('gvManagerUserRegister/flashes') ?>
             
             <div id="sf_admin_header">
@@ -109,26 +95,6 @@
         };
         var chart_api = new google.visualization.PieChart(document.getElementById('piechart_pub_type'));
         chart_api.draw(data_api, options_api);
-
-        //Hình 2: trạng thái thông tin về developer
-//        var array_developer = new Array(['Task', '<?php //echo __('Tình trạng developer')?>//']);
-//        <?php //if($count_actived_developer) {?>
-//        array_developer.push(['<?php //echo __('Còn hoạt động')?>//', <?php //echo $count_actived_developer;?>//]);
-//        <?php //}?>
-<!--        --><?php //if($count_deactived_developer) {?>
-//        array_developer.push(['<?php //echo __('Chưa kích hoạt')?>//', <?php //echo $count_deactived_developer;?>//]);
-//        <?php //}?>
-<!--        --><?php //if($count_banned_developer) {?>
-//        array_developer.push(['<?php //echo __('Bị Đình chỉ')?>//', <?php //echo $count_banned_developer;?>//]);
-//        <?php //}?>
-//        var data_developer = google.visualization.arrayToDataTable(array_developer);
-//        formatter.format(data_developer, 1);
-//        var options_developer = {
-//            title: '<?php //echo __('Thông tin về developer')?>//',
-//            is3D: true
-//        };
-//        var chart_developer = new google.visualization.PieChart(document.getElementById('piechart_pub_status'));
-//        chart_developer.draw(data_developer, options_developer);
 
         //Hình 3: Thông tin nhà phát triển đăng ký tài khoản
         var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('Đăng ký mới') ?>"]);

@@ -36,65 +36,68 @@ Doctrine_Manager::getInstance()->bindComponent('UserInfo', 'doctrine');
  * @property User $User
  * @property ClientType $ClientType
  * @property Partner $Partner
+ * @property Doctrine_Collection $MoneyLogs
  * 
- * @method integer    getUserid()             Returns the current record's "userid" value
- * @method string     getUsername()           Returns the current record's "username" value
- * @method integer    getIsonline()           Returns the current record's "isonline" value
- * @method integer    getClientid()           Returns the current record's "clientid" value
- * @method string     getIp()                 Returns the current record's "ip" value
- * @method string     getDevice()             Returns the current record's "device" value
- * @method string     getScreen()             Returns the current record's "screen" value
- * @method integer    getCurrentgameid()      Returns the current record's "currentgameid" value
- * @method integer    getExperience()         Returns the current record's "experience" value
- * @method integer    getTotalmatch()         Returns the current record's "totalmatch" value
- * @method integer    getTotalwin()           Returns the current record's "totalwin" value
- * @method integer    getPlayedgame()         Returns the current record's "playedgame" value
- * @method timestamp  getStartplayedtime()    Returns the current record's "startplayedtime" value
- * @method string     getCp()                 Returns the current record's "cp" value
- * @method string     getDeviceidentify()     Returns the current record's "deviceidentify" value
- * @method integer    getGold()               Returns the current record's "gold" value
- * @method integer    getCash()               Returns the current record's "cash" value
- * @method integer    getLevel()              Returns the current record's "level" value
- * @method integer    getMedal()              Returns the current record's "medal" value
- * @method integer    getTrustedindex()       Returns the current record's "trustedindex" value
- * @method integer    getAvatarid()           Returns the current record's "avatarid" value
- * @method integer    getAutoready()          Returns the current record's "autoready" value
- * @method integer    getAutodenyinvitation() Returns the current record's "autodenyinvitation" value
- * @method timestamp  getLastlogintime()      Returns the current record's "lastlogintime" value
- * @method Medal      getMedal()              Returns the current record's "Medal" value
- * @method Level      getLevel()              Returns the current record's "Level" value
- * @method User       getUser()               Returns the current record's "User" value
- * @method ClientType getClientType()         Returns the current record's "ClientType" value
- * @method Partner    getPartner()            Returns the current record's "Partner" value
- * @method UserInfo   setUserid()             Sets the current record's "userid" value
- * @method UserInfo   setUsername()           Sets the current record's "username" value
- * @method UserInfo   setIsonline()           Sets the current record's "isonline" value
- * @method UserInfo   setClientid()           Sets the current record's "clientid" value
- * @method UserInfo   setIp()                 Sets the current record's "ip" value
- * @method UserInfo   setDevice()             Sets the current record's "device" value
- * @method UserInfo   setScreen()             Sets the current record's "screen" value
- * @method UserInfo   setCurrentgameid()      Sets the current record's "currentgameid" value
- * @method UserInfo   setExperience()         Sets the current record's "experience" value
- * @method UserInfo   setTotalmatch()         Sets the current record's "totalmatch" value
- * @method UserInfo   setTotalwin()           Sets the current record's "totalwin" value
- * @method UserInfo   setPlayedgame()         Sets the current record's "playedgame" value
- * @method UserInfo   setStartplayedtime()    Sets the current record's "startplayedtime" value
- * @method UserInfo   setCp()                 Sets the current record's "cp" value
- * @method UserInfo   setDeviceidentify()     Sets the current record's "deviceidentify" value
- * @method UserInfo   setGold()               Sets the current record's "gold" value
- * @method UserInfo   setCash()               Sets the current record's "cash" value
- * @method UserInfo   setLevel()              Sets the current record's "level" value
- * @method UserInfo   setMedal()              Sets the current record's "medal" value
- * @method UserInfo   setTrustedindex()       Sets the current record's "trustedindex" value
- * @method UserInfo   setAvatarid()           Sets the current record's "avatarid" value
- * @method UserInfo   setAutoready()          Sets the current record's "autoready" value
- * @method UserInfo   setAutodenyinvitation() Sets the current record's "autodenyinvitation" value
- * @method UserInfo   setLastlogintime()      Sets the current record's "lastlogintime" value
- * @method UserInfo   setMedal()              Sets the current record's "Medal" value
- * @method UserInfo   setLevel()              Sets the current record's "Level" value
- * @method UserInfo   setUser()               Sets the current record's "User" value
- * @method UserInfo   setClientType()         Sets the current record's "ClientType" value
- * @method UserInfo   setPartner()            Sets the current record's "Partner" value
+ * @method integer             getUserid()             Returns the current record's "userid" value
+ * @method string              getUsername()           Returns the current record's "username" value
+ * @method integer             getIsonline()           Returns the current record's "isonline" value
+ * @method integer             getClientid()           Returns the current record's "clientid" value
+ * @method string              getIp()                 Returns the current record's "ip" value
+ * @method string              getDevice()             Returns the current record's "device" value
+ * @method string              getScreen()             Returns the current record's "screen" value
+ * @method integer             getCurrentgameid()      Returns the current record's "currentgameid" value
+ * @method integer             getExperience()         Returns the current record's "experience" value
+ * @method integer             getTotalmatch()         Returns the current record's "totalmatch" value
+ * @method integer             getTotalwin()           Returns the current record's "totalwin" value
+ * @method integer             getPlayedgame()         Returns the current record's "playedgame" value
+ * @method timestamp           getStartplayedtime()    Returns the current record's "startplayedtime" value
+ * @method string              getCp()                 Returns the current record's "cp" value
+ * @method string              getDeviceidentify()     Returns the current record's "deviceidentify" value
+ * @method integer             getGold()               Returns the current record's "gold" value
+ * @method integer             getCash()               Returns the current record's "cash" value
+ * @method integer             getLevel()              Returns the current record's "level" value
+ * @method integer             getMedal()              Returns the current record's "medal" value
+ * @method integer             getTrustedindex()       Returns the current record's "trustedindex" value
+ * @method integer             getAvatarid()           Returns the current record's "avatarid" value
+ * @method integer             getAutoready()          Returns the current record's "autoready" value
+ * @method integer             getAutodenyinvitation() Returns the current record's "autodenyinvitation" value
+ * @method timestamp           getLastlogintime()      Returns the current record's "lastlogintime" value
+ * @method Medal               getMedal()              Returns the current record's "Medal" value
+ * @method Level               getLevel()              Returns the current record's "Level" value
+ * @method User                getUser()               Returns the current record's "User" value
+ * @method ClientType          getClientType()         Returns the current record's "ClientType" value
+ * @method Partner             getPartner()            Returns the current record's "Partner" value
+ * @method Doctrine_Collection getMoneyLogs()          Returns the current record's "MoneyLogs" collection
+ * @method UserInfo            setUserid()             Sets the current record's "userid" value
+ * @method UserInfo            setUsername()           Sets the current record's "username" value
+ * @method UserInfo            setIsonline()           Sets the current record's "isonline" value
+ * @method UserInfo            setClientid()           Sets the current record's "clientid" value
+ * @method UserInfo            setIp()                 Sets the current record's "ip" value
+ * @method UserInfo            setDevice()             Sets the current record's "device" value
+ * @method UserInfo            setScreen()             Sets the current record's "screen" value
+ * @method UserInfo            setCurrentgameid()      Sets the current record's "currentgameid" value
+ * @method UserInfo            setExperience()         Sets the current record's "experience" value
+ * @method UserInfo            setTotalmatch()         Sets the current record's "totalmatch" value
+ * @method UserInfo            setTotalwin()           Sets the current record's "totalwin" value
+ * @method UserInfo            setPlayedgame()         Sets the current record's "playedgame" value
+ * @method UserInfo            setStartplayedtime()    Sets the current record's "startplayedtime" value
+ * @method UserInfo            setCp()                 Sets the current record's "cp" value
+ * @method UserInfo            setDeviceidentify()     Sets the current record's "deviceidentify" value
+ * @method UserInfo            setGold()               Sets the current record's "gold" value
+ * @method UserInfo            setCash()               Sets the current record's "cash" value
+ * @method UserInfo            setLevel()              Sets the current record's "level" value
+ * @method UserInfo            setMedal()              Sets the current record's "medal" value
+ * @method UserInfo            setTrustedindex()       Sets the current record's "trustedindex" value
+ * @method UserInfo            setAvatarid()           Sets the current record's "avatarid" value
+ * @method UserInfo            setAutoready()          Sets the current record's "autoready" value
+ * @method UserInfo            setAutodenyinvitation() Sets the current record's "autodenyinvitation" value
+ * @method UserInfo            setLastlogintime()      Sets the current record's "lastlogintime" value
+ * @method UserInfo            setMedal()              Sets the current record's "Medal" value
+ * @method UserInfo            setLevel()              Sets the current record's "Level" value
+ * @method UserInfo            setUser()               Sets the current record's "User" value
+ * @method UserInfo            setClientType()         Sets the current record's "ClientType" value
+ * @method UserInfo            setPartner()            Sets the current record's "Partner" value
+ * @method UserInfo            setMoneyLogs()          Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -366,5 +369,9 @@ abstract class BaseUserInfo extends sfDoctrineRecord
         $this->hasOne('Partner', array(
              'local' => 'cp',
              'foreign' => 'partnerId'));
+
+        $this->hasMany('MoneyLog as MoneyLogs', array(
+             'local' => 'userId',
+             'foreign' => 'userId'));
     }
 }

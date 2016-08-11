@@ -16,11 +16,14 @@ class GameTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Game');
     }
-    public static  function getListGame()
+    public static  function getListGame($gameId = null)
     {
-        return  GameTable::getInstance()->createQuery('a')
+        $sql =   GameTable::getInstance()->createQuery('a')
             ->select('a.gameid, a.name')
-            ->where('status = 1')
-            ->fetchArray();
+            ->where('status = 1');
+        if($gameId){
+            $sql->andWhere("a.gameid =?", $gameId);
+        }
+        return $sql->fetchArray();
     }
 }

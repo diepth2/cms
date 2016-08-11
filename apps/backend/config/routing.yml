@@ -1,3 +1,12 @@
+revenue_game:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoneyLog
+    module:               gvManagerRevenueGame
+    prefix_path:          /gvManagerRevenueGame
+    column:               logid
+    with_wildcard_routes: true
+
 client_type:
   class: sfDoctrineRouteCollection
   options:
@@ -265,6 +274,24 @@ sf_guard_permission:
     prefix_path:          /sfGuardPermission
     column:               id
     with_wildcard_routes: true
+# default rules
+ajax_load_chart_data:
+  url: /ajax_load_chart_data
+  param: {module: ajax, action: loadChartData}
+# ajax tải thống kê phế game
+ajax_load_statistic_data_inspect:
+  url: /ajax_load_statistic_data_inspect
+  param: {module: ajax, action: loadStatisticDataInspect}
+
+# ajax phân trang phế game
+ajax_load_statistic_data_inspect_pagination:
+  url: /ajax_load_statistic_data_inspect_pagination
+  param: {module: ajax, action: loadStatisticDataInspectPagination}
+
+# ajax tính tổng trong phế game
+ajax_load_summary_data_inspect:
+  url: /ajax_load_summary_data_inspect
+  param: {module: ajax, action: loadSummaryDataInspect}
 homepage:
   url:   /
   param: { module: vtHomePage, action: index }

@@ -12,148 +12,241 @@
  */
 class ajaxActions extends sfActions{
     //put your code here
-    
-    public function executeLoadArticle(sfWebRequest $request){
-        
-        $type=$request->getParameter('type');
-        if ($type==null){$type=1;}
-        $keyword = $request->getParameter('keyword');
-        $pageIndex = $request->getParameter('pageIndex');
-        $pageSize =  10;
-        $myPager = new sfDoctrinePager('VtpArticle', $pageSize);
-        $keyword = trim($keyword);
-        $articleId = sfContext::getInstance()->getUser()->getAttribute('article_id');
-        if($articleId){
-            $myPager->setQuery(VtpArticleTable::getSearchArticle($keyword,$articleId));
-        }
-        else{
-            $myPager->setQuery(VtpArticleTable::getSearchArticle($keyword));
-        }
-        $myPager->setPage($this->getRequestParameter('page', $pageIndex));
-        $myPager->init();
-        $arrayResult = $myPager->getResults(Doctrine::HYDRATE_ARRAY);
-        $paging = array("paging" => true, "pageIndex" => $pageIndex, "pageSize" => $pageSize, "maxPage" => $myPager->getLastPage()); //
-        array_push($arrayResult, $paging);
-        return $this->renderText(json_encode($arrayResult));
-    }
+    // Biểu đồ bên trang chủ Publisher + Đối soát
 
-    public function executeMove(sfWebRequest $request)
+    public function executeLoadChartData(sfWebRequest $request)
     {
-        try {
-            $request->checkCSRFProtection();
-        } catch (Exception $e) {
-            return $this->renderText('csrf');
+        $this->checkLoginForAjax();
+        //
+        $i18n = sfContext::getInstance()->getI18N();
+        $form = new BaseForm();
+        $token = $request->getParameter('token',0);
+        if ($form->getCSRFToken() != $token){
+            return $this->renderText(json_encode(array('notice' => $i18n->__('Giá trị token không hợp lệ.'))));
         }
-        $type=$request->getGetParameters('type');
-        if($type=='up'){
+        $this->filter_date = $request->getParameter('filter_date');
+        //
+        $filter_date =  $request->getParameter('filter_date');
+        $filter_type =  $request->getParameter('filter_type');
+        $filter_game =  $request->getParameter('filter_game');
+        $filter_os = $request->getParameter('filter_os');
 
-        }elseif($type=='down'){
-
-        }
-
-        $table = Doctrine_Core::getTable('VtpCategory');
-
-        if (
-            $table->hasField($field = $request->getParameter('field'))
-            && ($record = $table->find($request->getParameter('pk')))
-        ) {
-            $record->set($field, !$record->get($field));
-            $record->save();
-
-            return $this->renderText($record->$field ? '1' : '0');
-        } else {
-            return $this->renderText('404');
-        }
-    }
-    
-    // upload nhieu file trong photo album
-    public function executeAjaxUploadImageFiles(sfWebRequest $request) {
-        $i18n = $this->getContext()->getI18N();
-        //-- disable debug
-        sfConfig::set('sf_web_debug', false);
-
-        if ($this->getUser()->isAuthenticated()) {
-            if (!$request->isXmlHttpRequest()) {
-
-                $token = $request->getParameter('token', 0);
-
-                // Set the upload directory
-                $uploadDir = sfConfig::get("app_url_media_images", "/medias/app");
-                if (!is_dir($uploadDir))
-                    mkdir($uploadDir, 0777, true);
-                // Set the allowed file extensions
-                $fileTypes = array('jpg', 'jpeg', 'gif', 'png'); // Allowed file extensions
-                $fileMimeTypes = array('application/octet-stream', 'image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png', 'image/gif', '');
-
-                if (!empty($_FILES)) {
-
-                    $maxFileSize = 10048576;
-                    if ($_FILES['Filedata']['size'] > $maxFileSize) {
-                        return $this->renderText(json_encode(array('errCode' => 5, 'message' => 'Max Size ' . $maxFileSize . "(B)")));
-                    }
-
-                    $tempFile = $_FILES['Filedata']['tmp_name'];
-                    // Validate the filetype
-                    $fileParts = pathinfo($_FILES['Filedata']['name']);
-                    if (in_array(strtolower($fileParts['extension']), $fileTypes) && in_array($_FILES['Filedata']['type'], $fileMimeTypes)) {
-                        $fileNameUnique = uniqid() . "." . $fileParts['extension'];
-                        try {
-                            
-                        } catch (Exception $e) {
-                            sfContext::getInstance()->getLogger()->log("[CP CMS] Upload move file/create thumb Exception:" . $e->getMessage());
-                            return $this->renderText(json_encode(array('errCode' => 999, 'message' => 'unknown')));
-                        }
-                    } else {
-                        // The file type wasn't allowed
-                        return $this->renderText(json_encode(array('errCode' => 2, 'message' => $i18n->__('File upload không đúng định đạng'))));
-                    }
-                }
-                return $this->renderText(json_encode(array('errCode' => 3, 'message' => $i18n->__('Truy cập không hợp lệ'))));
-            } else
-                return $this->renderText(json_encode(array('errCode' => 3, 'message' => $i18n->__('Truy cập không hợp lệ'))));
-        }
-    }
-
-    public function executeAjaxRemoveImageFiles(sfWebRequest $request) {
-        $i18n = $this->getContext()->getI18N();
-        //-- disable debug
-        sfConfig::set('sf_web_debug', false);
-
-        if ($this->getUser()->isAuthenticated()) {
-            if ($request->isXmlHttpRequest()) {
-                $appId = $request->getParameter('file_id', null);
-                $objImg = VtPictureAlbumTable::getInstance()->findOneBy("id", $appId);
-                if ($objImg) {
-                    try {
-                        $objImg->delete();
-                        return $this->renderText(json_encode(array(
-                                    'errorCode' => 0,
-                                    'message' => $i18n->_('Xóa file thành công')
-                        )));
-                    } catch (Exception $exc) {
-                        //ghi log
-                        // echo $exc->getTraceAsString();
-                        return $this->renderText(json_encode(array(
-                                    'errorCode' => 1,
-                                    'message' => $exc->getTraceAsString(),
-                        )));
-                    }
-                }
+        //
+        $datefrom = null;
+        $dateto = null;
+        if($this->filter_date == 'dateoption'){
+            $datefrom = $request->getParameter('date_from');
+            $dateto = $request->getParameter('date_to');
+            if($datefrom != '' && $dateto != ''){
+                $datefrom = date_format(date_create($datefrom),'Y-m-d' );
+                $dateto = date_format(date_create($dateto),'Y-m-d' );
             }
+            $this->datefrom = $datefrom;
+            $this->dateto = $dateto;
         }
-        return $this->renderText(json_encode(array(
-                    'errorCode' => 1,
-                    'message' => $i18n->_('Xóa file thất bại')
-        )));
+        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os);
+
     }
-    
-    public function executeAjaxLoadCategoryNews(sfWebRequest $request) {
-        $listCategoryNews = VtpCategoryTable::getCategoryByTypeClone(VtCommonEnum::NewCategory, VtCommonEnum::portalDefault,'');
-        return $this->renderText(json_encode($listCategoryNews));
+
+    // Phân trang thống kế bên  phế game phân trang
+    public function executeLoadStatisticDataInspectPagination(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $form = new BaseForm();
+        $token = $request->getParameter('token',0);
+        if ($form->getCSRFToken() != $token){
+            return $this->renderText(json_encode(array('notice' => $i18n->__('Giá trị token không hợp lệ.'))));
+        }
+
+        $this->filter_date = $request->getParameter('filter_date');
+      //  $date_active = date_format(date_create(VtPublisherInfoTable::getMinDateActive()),'Y-m-d');
+
+        $filter_date =  $request->getParameter('filter_date');
+        $filter_type =  $request->getParameter('filter_type');
+        $filter_game =  $request->getParameter('filter_game');
+        $filter_os = $request->getParameter('filter_os');
+        //
+        $this->pageId = $request->getParameter('pageId');
+        //
+        switch($this->filter_date){
+            case'sevendaysago':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d")-6, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+            case'today':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr1);
+                break;
+            case'yesterday':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d")-1, date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr1);
+                break;
+            case'thismonth':
+                $daystr1 = mktime(0, 0, 0, date("m"), 1, date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d");
+                break;
+            case'previousmonth':
+                $daystr1 = mktime(0, 0, 0, date("m")-1, 1, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m"), 1, date("Y")) - 86400;
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+            case'all':
+                $datefrom = '';
+                $dateto = date("Y-m-d");
+                break;
+            case'dateoption':
+                // Lấy thời gian từ việc chọn: mặc định khi chưa chọn thì lấy toàn bộ thời gian
+                $datefrom = $request->getParameter('date_from');
+                $dateto = $request->getParameter('date_to');
+                if($datefrom != '' && $dateto != ''){
+                    $datefrom = date_format(date_create($datefrom),'Y-m-d' );
+                    $dateto = date_format(date_create($dateto),'Y-m-d' );
+                }
+                break;
+            default:
+                $daystr1 = mktime(0, 0, 0, date("m")  , date("d")-6, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+        }
+        $this->datefrom = $datefrom;
+        $this->dateto = $dateto;
+        $this->date_active = '';
+        // Mảng DL từ bảng Request
+        $this->revenuGoldToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d'));
+        $this->revenuCashToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d'));
+
+        $this->revenuGoldYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d', time() - 24*3600));
+        $this->revenuCashYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d', time() - 24*3600));
+
+        $this->revenuGoldThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
+        $this->revenuCashThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
+
+        // Biểu đồ
+        $this->revenuGoldByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
+        $this->revenuCashByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
+
+
+        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os);
+        // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
+        $this->list_games = GameTable::getListGame($filter_game);
+        $this->list_os = ClientTypeTable::getListOs($filter_os);
     }
-    public function executeAjaxLoadCategoryService(sfWebRequest $request) {
-        $listCategoryService = VtpCategoryTable::getCategoryByTypeClone(VtCommonEnum::ServiceCategory, VtCommonEnum::portalDefault,'');
-        return $this->renderText(json_encode($listCategoryService));
+    // Thống kê bên Đối soát phế game
+    public function executeLoadStatisticDataInspect(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $form = new BaseForm();
+        $token = $request->getParameter('token',0);
+        if ($form->getCSRFToken() != $token){
+            return $this->renderText(json_encode(array('notice' => $i18n->__('Giá trị token không hợp lệ.'))));
+        }
+    }
+
+
+    // Tính tổng theo lựa chọn bên Đối soát-- phế game
+    public function executeLoadSummaryDataInspect(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $form = new BaseForm();
+        $token = $request->getParameter('token',0);
+        if ($form->getCSRFToken() != $token){
+            return $this->renderText(json_encode(array('notice' => $i18n->__('Giá trị token không hợp lệ.'))));
+        }
+        $this->filter_date = $request->getParameter('filter_date');
+
+        $filter_date =  $request->getParameter('filter_date');
+        $filter_type =  $request->getParameter('filter_type');
+        $filter_game =  $request->getParameter('filter_game');
+        $filter_os = $request->getParameter('filter_os');
+
+        //
+        switch($this->filter_date){
+            case'sevendaysago':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d")-6, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+            case'today':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+                // $daystr2 = mktime(0, 0, 0, date("m"), date("d")+1, date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr1);
+                break;
+            case'yesterday':
+                $daystr1 = mktime(0, 0, 0, date("m"), date("d")-1, date("Y"));
+                // $daystr2 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr1);
+                break;
+            case'thismonth':
+                $daystr1 = mktime(0, 0, 0, date("m"), 1, date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d");
+                break;
+            case'previousmonth':
+                $daystr1 = mktime(0, 0, 0, date("m")-1, 1, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m"), 1, date("Y")) - 86400;
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+            case'all':
+                $datefrom = '';
+                $dateto = date("Y-m-d");
+                break;
+            case'dateoption':
+                // Lấy thời gian từ việc chọn: mặc định khi chưa chọn thì lấy toàn bộ thời gian
+                $datefrom = $request->getParameter('date_from');
+                $dateto = $request->getParameter('date_to');
+                if($datefrom != '' && $dateto != ''){
+                    $datefrom = date_format(date_create($datefrom),'Y-m-d' );
+                    $dateto = date_format(date_create($dateto),'Y-m-d' );
+                }
+                //$this->datefrom = $datefrom;
+                //$this->dateto = $dateto;
+                break;
+            default:
+                $daystr1 = mktime(0, 0, 0, date("m")  , date("d")-6, date("Y"));
+                $daystr2 = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+                $datefrom = date("Y-m-d", $daystr1);
+                $dateto = date("Y-m-d", $daystr2);
+                break;
+        }
+        $this->datefrom = $datefrom;
+        $this->dateto = $dateto;
+        $this->date_active = '';
+        // Mảng DL từ bảng App join với bảng Platform
+        //$this->listAppByPublisher = VtAppInfoTable::getListAppByPublisherActive();
+        // Mảng DL từ bảng Request
+       // $this->listRequestGroupByDateFromTo = VtLogApiRequestTable::getApiRequestGroupByDateFromTo($filter_publisher, $datefrom, $dateto, $idapp, $idapi);
+        // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
+       // $this->listApiItem = VtApiItemTable::getListItemm(0, $idapi);
+        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, $filter_type, null);
+
+        $this->revenuYesterday = $request->getParameter('revenuYesterday');
+        $this->revenuThisMonth = $request->getParameter('revenuThisMonth');
+        $this->revenuPreviousMonth = $request->getParameter('revenuPreviousMonth');
+        $this->requestYesterday = $request->getParameter('requestYesterday');
+        $this->requestThisMonth = $request->getParameter('requestThisMonth');
+        $this->requestPreviousMonth = $request->getParameter('requestPreviousMonth');
+    }
+    public function checkLoginForAjax()
+    {
+        if(!$this->getUser()->isAuthenticated()){
+            $hostname = $this->generateUrl("dang_nhap");
+            echo "<script>window.location.href = '".$hostname."';</script>";
+            exit();
+        }else{
+            return false;
+        }
     }
 }
 

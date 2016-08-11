@@ -11,15 +11,18 @@ Doctrine_Manager::getInstance()->bindComponent('Game', 'doctrine');
  * @property string $name
  * @property string $description
  * @property integer $status
+ * @property Doctrine_Collection $MoneyLogs
  * 
- * @method integer getGameid()      Returns the current record's "gameid" value
- * @method string  getName()        Returns the current record's "name" value
- * @method string  getDescription() Returns the current record's "description" value
- * @method integer getStatus()      Returns the current record's "status" value
- * @method Game    setGameid()      Sets the current record's "gameid" value
- * @method Game    setName()        Sets the current record's "name" value
- * @method Game    setDescription() Sets the current record's "description" value
- * @method Game    setStatus()      Sets the current record's "status" value
+ * @method integer             getGameid()      Returns the current record's "gameid" value
+ * @method string              getName()        Returns the current record's "name" value
+ * @method string              getDescription() Returns the current record's "description" value
+ * @method integer             getStatus()      Returns the current record's "status" value
+ * @method Doctrine_Collection getMoneyLogs()   Returns the current record's "MoneyLogs" collection
+ * @method Game                setGameid()      Sets the current record's "gameid" value
+ * @method Game                setName()        Sets the current record's "name" value
+ * @method Game                setDescription() Sets the current record's "description" value
+ * @method Game                setStatus()      Sets the current record's "status" value
+ * @method Game                setMoneyLogs()   Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -71,6 +74,8 @@ abstract class BaseGame extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('MoneyLog as MoneyLogs', array(
+             'local' => 'gameId',
+             'foreign' => 'gameId'));
     }
 }
