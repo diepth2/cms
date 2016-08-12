@@ -2,3 +2,89 @@
     font-weight: bold;
     margin-left: 10px;
 }
+.sf_admin_form_field_category_type .radio_list{
+    list-style: none;
+    margin: 0px;
+}
+.sf_admin_form_field_category_type .radio_list li{
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+/* Fix loi tren Chrome khi menu bi day xuong 2 hang trong Admin*/
+.navbar .nav > li > a{
+    white-space: nowrap;
+}
+
+/* Fix loi ten tai khoan bi xuong dong trong Admin */
+.pull-right{
+    width: 25%;
+}
+.flash-err{
+    background: #FA6363;
+    line-height: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    color: #009591;
+    font-size: 15px;
+    text-align: center;
+}
+.flash-sucess{
+    background: #efefef;
+}
+
+.btn, tfoot tr th div{
+    white-space: nowrap;
+}
+
+/* Fix lỗi xuống dòng của chrome */
+.vtt-fix-chrome{
+    white-space: nowrap;
+}
+
+/* Fix lỗi nút xóa thừa chiều cao */
+.btn-danger, .btn-warning{
+    height: 16px;
+}
+
+/* Căn text vào giữa dòng theo chiều dọc của table */
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+/* Canh lề trái các label vào 20px, ban đầu nằm sát lề trái */
+.form-horizontal .control-label{
+    margin-left: 20px;
+}
+
+/*trungpd2: căn chỉnh lại width của tiêu đề*/
+.vtt-title-gray{
+    color: #aaa;
+    font-size: 12px;
+}
+
+.vtt-order-no{
+    width: 30px;
+}
+
+.vtt-developer-name{
+    width: 110px;
+}
+
+.vtt-app-name{
+    width: 160px;
+}
+
+.vtt-app-revenue{
+    width: 110px;
+}
+
+.vtt-app-status{
+    width: 80px;
+}

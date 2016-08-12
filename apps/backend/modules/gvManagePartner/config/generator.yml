@@ -14,8 +14,10 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        display: [partnername, username]
+      filter:
+        display: [partnername, username]
       form:    ~
       edit:    ~
       new:     ~

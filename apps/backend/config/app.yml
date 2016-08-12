@@ -110,6 +110,9 @@ all:
             Quản lý hệ điều hành:
               credentials: [admin]
               route: client_type
+            Quản lý đối tác:
+              credentials: [admin]
+              route: partner
         Ngôn ngữ:
           dropdown:
             Tiếng Việt:

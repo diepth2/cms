@@ -1,30 +1,13 @@
-// HuongND16 Bắt sự kiện ấn nút enter dùng cho nút search và popup đăng nhập
-function doClick(e, button) {
-    var key;
-    if (window.event)
-        key = window.event.keyCode;     //IE
-    else
-        key = e.which;     //firefox
-    if (key == 13) {
-        var btn = $("#" + button);
-        if (btn != null) {
-            btn.click();
-        }
-    }
-}
+// HuongND16 B?t s? ki?n ?n nút enter dùng cho nút search và popup ??ng nh?p
+$(document).ready(function() {
+    $('div.control-group input:text:not([readonly]):not([disabled])').eq(0).focus();
+    $(".form-control vtt-login-username").focus();
+  $("input[class='form-control vtt-login-pass error']").eq(0).focus();
+  $("input[class='form-control vtt-login-username error']").eq(0).focus();
 
-function registerEmail(){
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var email = $('#email').val();
-    var link_send = $('#link_send').val();
-    var invalid = $('#invalid-email').val();
-    if(re.test(email)){
-        $.post(link_send, {email: email, token: $("#token-email").val()}, function (result) {
-                obj = $.parseJSON(result);
-                alert(obj['notice']);
-            });
+  $('div.control-group.error input').eq(0).focus();
+    if (navigator.appName === "Microsoft Internet Explorer") {
+        $('input, textarea').placeholder();
+//        $('input, textarea').placeholder({customClass: 'my-placeholder'});
     }
-    else {
-        alert(invalid);
-    }
-}
+})

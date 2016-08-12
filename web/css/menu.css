@@ -1,110 +1,42 @@
-.tab_user_alert {
-    overflow: hidden;
-    width: 165px;
+#nav{
+    width:100%;
+    text-align:center;
+    min-width:1300px;
+    height:80px;
+    position:absolute;
+    top:0;
+    left:0;
+    background:#fff;
+    list-style:none;
+    border-bottom: 1px solid #000;
 }
 
-.row_tab{
-    background: url("../images/bg_tab_user.jpg") repeat-x scroll 0 0 transparent;
-    display:block;
-    width:165px;
-    height:29px;       
+#nav li{
+    display:inline;
 }
 
-.tab_user_pd{
-    padding-left:27px;
-    line-height:27px;
-	height:27px;
-	padding-bottom:3px;
+#nav .navthuoc{
+    display:inline-block;
+    background-color:#000;
+    color:#FFF;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing:1px;
+    font-size:16pt;
+    line-height:18pt;
+    font-weight:400;
+    text-decoration:none;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top:35px;
+    padding:0px 3px 2px 3px;
 }
 
-#tab_user_pf{
-    background: url("../images/icon_tab.png") 0px 5px no-repeat;
+#nav .nav:hover{
+    background:#FFFF00;
+    color:#000;
 }
 
-#tab_user_fr{
-    background: url("../images/icon_tab.png") 0px -25px no-repeat;
-}
-
-#tab_user_of{
-    background: url("../images/icon_tab.png") 0px -60px no-repeat;
-}
-
-#tab_user_ec{
-    background: url("../images/icon_tab.png") 0px -84px no-repeat;
-}
-#tab_user_cr{
-    background: url("../images/icon_tab.png") 0px -53px no-repeat;
-}
-
-#tab_user_pw{
-    background: url("../images/icon_tab.png") 0px -116px no-repeat;
-}
-
-#tab_user_av{
-    background: url("../images/icon_tab.png") 0px -146px no-repeat;
-}
-
-#arr_user_alert{
-    position: absolute;
-    top: -7px;
-    left: 80px;
-}
-
-.row {
-	background-image: url("../images/row_bg.png");
-	background-repeat: repeat-x;
-	height: 30px;
-	padding-left: 7px;	
-	border-right-color: #636363;
-	border-left-color: #636363;
-	border-right-width: 1px;
-	border-left-width: 1px;
-	border-right-style: solid;
-	border-left-style: solid;
-}
-
-.row a:hover{
-    text-decoration: underline;
-    color:#ff9800;
-    font-weight: bold;    
-}
-.headerOfMenu {
-	background-image: url(../images/header_menu.png);
-	background-repeat: no-repeat;
-	height: 12px;
-	width: 141px;
-}
-.account_menu {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-style: normal;
-	color: #FFF;
-	font-weight: normal;
-	width: 141px;
-}
-.footerOfMenu {
-	background-image: url(../images/footer_menu.png);
-	background-repeat: no-repeat;
-	height: 6px;
-	width: 141px;
-}
-
-#username_new{
-    background-image: url(../images/bgl_user.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    width:82px;
-    height:20px;    
-    padding: 4px 1px;
-    color:#ffffff;
-}
-
-#username_new span{
-    background-image: url(../images/bgr_user.png);
-    background-repeat: no-repeat;
-    background-position: right center;
-    width:82px;
-    height:20px;    
-    padding: 4px 9px;
-    color:#ffffff;
+.active{
+    /*background:#428bca;*/
+    /*color:#0080c8;*/
 }

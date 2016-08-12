@@ -14,6 +14,7 @@
         'revenuCashThisMonth' => $revenuCashThisMonth,
         'list_games' => $list_games,
         'list_os' => $list_os,
+        'list_partners' => $list_partners,
         'listRevenueGroupByDateFromTo' => $listRevenueGroupByDateFromTo,
         'listRevenueGoldGroupByDateFromTo' => $listRevenueGoldGroupByDateFromTo
     ))

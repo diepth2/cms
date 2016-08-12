@@ -27,4 +27,13 @@ class PartnerTable extends Doctrine_Table
         }
         return $listType;
     }
+    public static  function getListPartner($partner_id = null)
+    {
+        $sql =   PartnerTable::getInstance()->createQuery('a')
+            ->select('a.partnerId, a.partnername');
+        if($partner_id){
+            $sql->andWhere("a.partnerId =?", $partner_id);
+        }
+        return $sql->fetchArray();
+    }
 }

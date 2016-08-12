@@ -314,6 +314,7 @@ if ($form->isCSRFProtected()):?>
         var filter_date = $("#filter-date").val();
         var filter_type = $("#filter-type").val();
         var filter_game = $("#filter-game").val();
+        var filter_partner = $("#filter-partner").val();
         var filter_os = $("#filter-os").val();
         var filter_date = $(this).text();
         var _link = "<?php #echo url_for("vt_log_api_request")?>" + "?filter_publisher=" + filter_publisher
@@ -328,7 +329,9 @@ if ($form->isCSRFProtected()):?>
         var filter_date = $("#filter-date").val();
         var filter_type = $("#filter-type").val();
         var filter_game = $("#filter-game").val();
+        var filter_partner = $("#filter-partner").val();
         var filter_os = $("#filter-os").val();
+        var filter_partner = $("#filter-partner").val();
         var filter_date = $("#filter-date").val();
         var date_from = $("#date-from").val();
         var date_to = $("#date-to").val();
@@ -344,6 +347,7 @@ if ($form->isCSRFProtected()):?>
                 filter_date: filter_date,
                 filter_app: filter_app,
                 filter_api: filter_api,
+                filter_partner: filter_partner,
                 date_from: date_from,
                 date_to: date_to,
                 token: csrf_value

@@ -98,6 +98,12 @@ foreach ($dataDate2 as $valDate2){
 									<option value="<?php echo $os['clientId'] ?>"><?php echo ($os['name']) ?></option>
 								<?php endforeach ?>
 							</select>
+                            <select name="filterPartner" id="filter-partner" style="margin-left: 10px; width: 130px;">
+                                <option value="0">Tất cả đối tác</option>
+                                <?php foreach($list_partners as $partner): ?>
+                                    <option value="<?php echo $partner['partnerid'] ?>"><?php echo ($partner['partnername']) ?></option>
+                                <?php endforeach ?>
+                            </select>
                             <a href="javascript:;" class="btn btn-primary vtt-p-white" style="margin-left: 10px; " id="search_log" role="button" ><?php echo __("Tìm kiếm") ?></a>
                     </div>
 					<div style="text-align: center;">
@@ -360,7 +366,7 @@ foreach ($dataDate2 as $valDate2){
         var filter_type = $("#filter-type").val();
         var filter_game = $("#filter-game").val();
         var filter_os = $("#filter-os").val();
-
+        var filter_partner = $("#filter-partner").val();
         var date_from = $("#date-from").val();
         var date_to = $("#date-to").val();
         //
@@ -410,9 +416,10 @@ foreach ($dataDate2 as $valDate2){
 //            });
             // Thống kê
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: url2,
-                data: { filter_type: filter_type, filter_date: filter_date, filter_game: filter_game, filter_os: filter_os, date_from: date_from, date_to: date_to, token: csrf_value },
+                data: { filter_type: filter_type, filter_date: filter_date, filter_game: filter_game, filter_os: filter_os,
+                    filter_partner: filter_partner,  date_from: date_from, date_to: date_to, token: csrf_value },
                 dataType: "text",
                 cache: false,
                 success: function(data){

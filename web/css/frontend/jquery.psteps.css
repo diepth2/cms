@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 24, 2015, 8:26:32 AM
+    Author     : bachpv1
+*/
+
+.step-title {
+    min-height: 20px;
+    float:left;
+    border-radius: 0;
+}
+.next-button, .submit-button, .back-button {
+    float:right;
+    margin:3px;
+}
+@media(max-width:600px) {
+    .step-content {
+        margin-top: 10px;
+    }
+}
+.psteps_circle_titles .circle-step {
+/*        width: 10px;
+    height: 10px;
+    padding: 5px;
+    line-height: 10px;
+    font-size: 10px;*/
+    border-radius: 500px 500px 500px 500px;
+    /*min-height:10px;*/
+}
+.psteps_circle_titles .step-line {
+    border-bottom: 3px solid #0099cc;
+    display: inline-block;
+    width: 25%;
+    float:left;
+    margin-top:14px;
+    margin-right: 3px;
+}
+.psteps_circle_contents {
+    background: #F9F9F9;
+    border: 1px dashed #CCCCCC;
+    margin: 15px 0 0;
+    padding: 20px;
+    position: relative;
+}
+.before-heading {
+    margin-top: -32px;
+    width: 99%;
+    margin-left: -24px;
+}
+
+.pf-form:after, .pf-form fieldset:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.payment-create-steps .next-button, .payment-create-steps .back-button, .payment-create-steps .submit-button{
+    margin-top: 30px;
+}
+
+/*.payment-create-steps p.checkbox{
+    margin-top: 20px;
+}*/
+
+.payment-create-steps label{
+    font-weight: bold;
+}
+
+.payment-create-steps a{
+    color: #428bca
+}
