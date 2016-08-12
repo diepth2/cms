@@ -10,10 +10,10 @@ indexSuccess:
 #    - select2/select2.min.css
 
   javascripts:
+#    - jquery.1.11.1.js
     - amcharts/amcharts.js
     - amcharts/serial.js
     - frontend/myjs_datepicker.js
-    - jquery.ui.datepicker.js
-
+    - ui.datepicker.min.js
   #has_layout:     true
   #layout:         layout

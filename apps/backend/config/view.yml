@@ -11,29 +11,8 @@ default:
     #keywords:     symfony, project
     #language:     en
     #robots:       index, follow
+  stylesheets:    [main.css, ui.all.css, ui.core.css, ui.datepicker.css, validationEngine.jquery.css, select2/select2.css, select2/select2.min.css]
+  javascripts:    [ui.core.min.js, ui.datepicker.min.js,global.js, jquery.validationEngine-vn.js, jquery.validationEngine.js, ckeditor/ckeditor.js, ckfinder/ckfinder.js, select2/select2.js, select2/select2.min.js, vtBackend.js]
 
-   stylesheets:
-     - main.css
-     - ui.all.css
-     - ui.core.css
-     - ui.datepicker.css
-     - validationEngine.jquery.css
-     - backend/mystyle.be.css
-     - frontend/jquery.loader.min.css
-     - select2/select2.css
-     - select2/select2.min.css
-   javascripts:
-     - ui.core.min.js
-     - ui.datepicker.min.js
-     - global.js
-     - jquery.validationEngine-vn.js
-     - jquery.validationEngine.js
-     - ckeditor/ckeditor.js
-     - ckfinder/ckfinder.js
-     - frontend/jquery.loader.min.js
-     - backend.js
-     - select2/select2.js
-     - select2/select2.min.js
-     - vtBackend.js
   has_layout:     true
   layout:         layout

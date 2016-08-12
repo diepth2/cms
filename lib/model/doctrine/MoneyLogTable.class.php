@@ -100,7 +100,7 @@ class MoneyLogTable extends Doctrine_Table
      * @return mixed
      * @modifier: diepth2 Chỉnh sửa để có thểm lấy thông tin thu nhập để VẼ BIỂU ĐỒ của tất cả DEV
      */
-    public static function getRevenueGroupByDateFromTo($gameId = null, $datefrom, $dateto, $type_game = null, $os_type = null)
+    public static function getRevenueGroupByDateFromTo($gameId = null, $datefrom, $dateto, $type_game = null, $os_type = null, $partner_id = null)
     {
         $sql = MoneyLogTable::getInstance()->createQuery('a')
             ->select('SUM(a.taxValue) AS sumTaxValue, DATE(a.insertedTime), a.gameId');
@@ -112,9 +112,13 @@ class MoneyLogTable extends Doctrine_Table
         } else {
             $sql->andwhere('a.changeCash > 0');
         }
+        $sql->leftJoin("a.UserInfo u");
         if($os_type){
-            $sql->leftJoin("a.UserInfo u");
             $sql->andwhere('u.clientId = ?', $os_type);
+        }
+//        var_dump($partner_id);die;
+        if($partner_id){
+            $sql->andwhere('u.cp = ?', $partner_id);
         }
         $sql->groupBy(" a.gameId ,  DATE(a.insertedTime)");
         $sql->orderBy(" DATE(a.insertedTime ) DESC");

@@ -8,6 +8,14 @@
 
 $(document).ready(function () {
   // initialization code goes here
+    $('select').select2();
+//    $('option').each(function() {
+//        var html = '';
+//        if ($(this).css('display') !== 'none') {
+//            $(this).replaceWith($(" " +  '<option>' + this.innerHTML + '</option>' + "'"));
+//        }
+//        $(this).parent().show();
+//    });
   $(".sf_admin_batch_checkbox").click(function () {
 //      if (this.checked == false) {
 //        document.getElementById('sf_admin_list_batch_checkbox').checked = false;
@@ -28,6 +36,10 @@ $(document).ready(function () {
   $('div.control-group input:text:not([readonly]):not([disabled])').eq(0).focus();
   $('div.sf_admin_form_row.error input').eq(0).focus();
   $('div.control-group.error input').eq(0).focus();
+
+//    $('input[rel="datepicker"]').daterangepicker({
+//        format: 'DD/MM/YYYY'
+//    });
 
 });
 

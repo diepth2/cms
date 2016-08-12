@@ -98,7 +98,7 @@ a img {
 #promotion-news select{
     padding: 3px;
     border: 1px solid #C3C3C3;
-    min-width: 160px;
+    max-width: 180px;
 }
 .btn-promotion{
     padding: 2px 10px;
@@ -311,20 +311,22 @@ a img {
     text-align: justify;
 }
 .home-page #site-services p {
-    text-align: justify;
+    text-align: left;
 }
 .home-page .news-item .description{
-    min-height: 35px;
+    height: 51px;
+    overflow: hidden;
 }
 .news-item.news-item-top a h3{
-    min-height: 50px;
+    height: 49px;
+    overflow: hidden;
 }
 #tin-tuc-items .item-top .content .lead{
     font-size: 14px;
     text-align: justify;
 }
 #tin-tuc-items .items-top .item {
-    min-height: 58px;
+    min-height: 63px;
 }
 
 .view-more{
@@ -524,7 +526,7 @@ form.register {
 #site-box-register .box-full {
     float: left;
     width: 1000px;
-}=======
+}
 .icon-search-28x28{
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAABa1BMVEUiHx8jHx8iHx4iHh4jHx8iHx8jHx4iHh4iHx4iHx8iHx8jHx8iHx8iHx8jHx8iHx8jHx8iHh4jHx8iHx8iHx8iHx8jHx8jHx8iHx8iHx8jHx8iHx8jHx8jHx8iHx8iHx8iHh4iHx8iHh4jHx8jHx8iHx8jHx8iHx8jHx8iHx8iHx8iHx8jHx8jHx8iHx4iHx8jHx8jHx8jHx8iHx8iHx4iHx8jHx8iHh4jHx8jHx8iHx8iHh4iHx4jHx8jHx8jHx8iHh4iHx8iHx8jHx8iHx8iHx4jHx8iHx8jHx4iHx8iHx8iHx4jHx8iHx8iHx8jHx8iHx4iHh4iHh4jHx8iHx4iHx4jHx8jHx8iHx4iHx8iHx4iHx8iHx8iHx8iHh4iHx8jHx8iHx4iHx4iHx8iHh4jHx8iHx8jHx8iHx8iHx4jHx8iHh4iHx8jHx8jHx8iHx8jHx8iHx8iHx8iHh8iHx4iHx8iHx4jHx8jHx9+MNZhAAAAeXRSTlMAAAAAZmYAZmZQRgkRGEBOCCwQCl5kI0YjZQpjYgtWAS86EGQiO0oMBFpfOCAcCT4xVDIUWQQvCBgDJmNPDkwoTEQQPRlGJFwJVA1EJUMIHwhWHF4aXD8zZDMQQlVFBWFgTkFKWEJNFAY6V0QfMAYTEgsFSQdPPEMsb5xhsAAAARZJREFUeF5lzEOXBEEQhdGIzMhS08bYtm3btq2fP5ndVTOL/jbvnLt4gIiclw1XjnpLJgAAQaW0u7SOhCBDVHn+NdgqwvUVnsYuU0/1OZrJiv1qjoBYEyiPNEAhL53lIK/Ip6jWhTK4Tnc0gaPYLFq4DB5FG9gqt73f7ATZZKIHEZWqemdTc0oH0oMoA7sh3a1mJJIfx336mJpxPYqIjBUeXJvTM5qmQZzmkQHTpAKyBX0xB7KlbGL5T1dWjTVQsSitb9jqehdbXAUMt2lnd0+qP36g0+ERIDCpGDgWJ6ex8wshLq8M68ZW7r69I6Lw/QOGTMN6shXAH3x+eWWAEPJR7M1RRClKIWmS9VGkmPmkr2KF5PfPL5D/H++sEkO1AAAAAElFTkSuQmCC") no-repeat scroll 4px 4px rgba(0, 0, 0, 0);
     display: inline-block;
@@ -535,13 +537,14 @@ form.register {
 #idea-group-keyword {
     width: 300px;
     /*float: right;*/
+    height: 22px;
 }
 .span-keyword{
     padding-left: 15px;
 }
 #idea-group-search-button{
-    right: 70px;
-    top: 2px;
+    right: 84px;
+    top: 3px;
 }
     
 .flash-err-idea{
@@ -560,8 +563,8 @@ form.register {
 #site-services .icons .icon-link {
     background: #d0d0d0;
     display: inline-block;
-    width: 112px;
-    height: 112px;
+    width: 113px;
+    height: 113px;
 }
 
 #site-services .icons .icon-link:hover,#site-services .icons .icon-link-active {
@@ -593,9 +596,246 @@ form.register {
     margin-top: 15px;
     border-collapse: collapse;
 }
-p, a, h1, h2, h3, h4, h5, span, label{
-    overflow: hidden;
+p, a, h1, h3, h4, h5, span, label{
+    color: #000;
 }
 .survey button{
     padding: 10px 13px;
+    white-space:pre-wrap;
+}
+#news-details .head .line-2 .news-title{
+    word-wrap: break-word;
+}
+#news-details .news-content{
+    word-wrap: break-word;
+}
+
+#site-links .link-top .icon-footer-link {
+    background: #d0d0d0;
+    /*display: inline-block;*/
+    width: 30px;
+    height: 30px;
+}
+
+#site-links .link-top .icon-footer-link:hover,#site-links .link-top .icon-footer-link-active {
+    background: #26c5c5;
+}
+#site-links .link-top .title .head{
+    margin-left: 35px;
+}
+#site-links .link-top:hover {
+    color: #009591;
+}
+#site-links a:hover{
+    color: #009591 ;
+}
+
+#site-links .link-top{
+    vertical-align: middle;
+}
+.isoftz-slider .button-back .icon-back
+{
+    background-position: -80px -271px;
+}
+.isoftz-slider .button-back.active:hover .icon-back
+{
+    background-position: 0px -271px;
+}
+.isoftz-slider .button-next .icon-next{
+    background-position: -40px -271px;
+ }
+
+.isoftz-slider .button-next.active:hover .icon-next{
+    background-position: -120px -271px;
+}
+
+.account-button {
+    background: none repeat scroll 0 0 #d2d2d2;
+    border: 0 solid #d2d2d2;
+    color: #222;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 50px;
+    width: 128px;
+    text-align: center;
+}
+.display-tr{
+    display: block;
+}
+.hidden-tr{
+    display: none;
+}
+.idea-cnt{
+    display: none;
+}
+#news-details .news-content {
+    line-height: 16px;
+}
+/*Chinh popup survey button Dong cua so*/
+.survey button.btn-primary{
+    white-space: nowrap;
+}
+#news-details .news-box-links li a:hover {
+    color: #009591 ;
+}
+.tin-lien-quan a:hover {
+    color: #009591 ;
+}
+
+#survey-resulted .box-message {
+    text-align: left;
+    margin: 0 20px;
+}
+
+#survey-resulted {
+    width: 650px;
+}
+
+#survey-resulted .box-message .date-time {
+    background: url(../img/group.png) -948px -155px no-repeat;
+    font-size: 12px;
+    color: #939393;
+    margin: 0;
+    padding: 10px 0 10px 20px;
+}
+
+#survey-resulted .box-message .results p {
+    font-size: 13px;
+    color: #444;
+}
+
+#survey-resulted .box-message .results {
+    overflow: auto;
+    height: 105px;
+}
+
+#survey-resulted .box-message .results .row {
+    height: 30px;
+    margin-top: 5px;
+}
+
+#survey-resulted .box-message .results .c1 {
+    display: inline-block;
+    width: 300px;
+    position: relative;
+    top: -14px;
+}
+
+#survey-resulted .box-message .results .c2 {
+    display: inline-block;
+    width: 200px;
+}
+
+#survey-resulted .box-message .results .c3 {
+    display: inline-block;
+    position: relative;
+    top: -14px;
+}
+
+#survey-resulted .progress {
+    background-color: #808589;
+    height: 6px;
+    -ms-border-radius: 9px;
+    border-radius: 9px;
+    position: relative;
+}
+
+    #survey-resulted .progress .progress-value {
+        background: #21d7c8;
+        height: 100%;
+        -ms-border-radius: 9px;
+        border-radius: 9px;
+    }
+
+#survey-resulted .summary {
+    text-align: right;
+    margin: 0 20px;
+}
+
+#survey-resulted .summary .line {
+    width: 150px;
+    float: right;
+}
+
+#survey-resulted .summary p {
+    margin: 0;
+}
+
+#survey-resulted .summary .so-phieu {
+    color: #009591;
+}
+#survey-resulted .box-message .results .c1 {
+    top: -11px;
+}
+/*xu ly khi do dai menu vuot qua khung*/
+#menu a{
+    word-wrap: break-word;
+}
+
+#product-details .product-info .command a{
+    line-height: 54px;
+}
+
+/*style the a*/
+.link-vt{
+    color: #009591;
+}
+.link-vt:hover{
+    color: #0473AF;
+}
+.under-line{
+    text-decoration: underline;
+}
+.bold{
+    font-weight: bold;
+}
+
+/*fix button search*/
+#global-search button {
+    top: 2px;
+    height: 27px;
+}
+.color-red{
+    color: red;
+}
+
+#product-items li .box .item a.product-name h4{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.alert-p{
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.alert-error{
+    /*background-color: #bf0000;*/
+}
+
+.alert-success{
+    /*background-color: #6ED3EA;*/
+}
+#home-province, #home-district, #home-guild{
+    width: 310px;
+}
+
+#newsletter button .icon-newletter{
+    background-color: #1e283c;
+}
+
+.form-date{
+    /*margin-right: 20px;*/
+}
+
+#idea-group h4{
+    font-weight: bold;
+    color: #d97014;
+    font-size: 17px;
+}
+#dich-vu-6 .item .box .title{
+    overflow: hidden;
+}
+#slider-1 .thumbNav li a{
+    background: #52939F;
 }

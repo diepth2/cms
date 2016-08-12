@@ -29,6 +29,7 @@ class ajaxActions extends sfActions{
         $filter_date =  $request->getParameter('filter_date');
         $filter_type =  $request->getParameter('filter_type');
         $filter_game =  $request->getParameter('filter_game');
+        $filter_partner =  $request->getParameter('filter_partner');
         $filter_os = $request->getParameter('filter_os');
 
         //
@@ -44,7 +45,7 @@ class ajaxActions extends sfActions{
             $this->datefrom = $datefrom;
             $this->dateto = $dateto;
         }
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os);
+        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
 
     }
 
@@ -65,7 +66,8 @@ class ajaxActions extends sfActions{
         $filter_type =  $request->getParameter('filter_type');
         $filter_game =  $request->getParameter('filter_game');
         $filter_os = $request->getParameter('filter_os');
-        //
+        $filter_partner = $request->getParameter('filter_partner');
+
         $this->pageId = $request->getParameter('pageId');
         //
         switch($this->filter_date){
@@ -132,12 +134,11 @@ class ajaxActions extends sfActions{
         // Biểu đồ
         $this->revenuGoldByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
         $this->revenuCashByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
-
-
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os);
+        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
         // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
         $this->list_games = GameTable::getListGame($filter_game);
-        $this->list_os = ClientTypeTable::getListOs($filter_os);
+//        $this->list_os = ClientTypeTable::getListOs($filter_os);
+//        $this->list_partners = PartnerTable::getListPartner($filter_partner);
     }
     // Thống kê bên Đối soát phế game
     public function executeLoadStatisticDataInspect(sfWebRequest $request)
@@ -145,6 +146,7 @@ class ajaxActions extends sfActions{
         $i18n = sfContext::getInstance()->getI18N();
         $form = new BaseForm();
         $token = $request->getParameter('token',0);
+
         if ($form->getCSRFToken() != $token){
             return $this->renderText(json_encode(array('notice' => $i18n->__('Giá trị token không hợp lệ.'))));
         }
@@ -165,6 +167,7 @@ class ajaxActions extends sfActions{
         $filter_date =  $request->getParameter('filter_date');
         $filter_type =  $request->getParameter('filter_type');
         $filter_game =  $request->getParameter('filter_game');
+        $filter_partner =  $request->getParameter('filter_partner');
         $filter_os = $request->getParameter('filter_os');
 
         //

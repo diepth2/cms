@@ -1,12 +1,22 @@
-$(function() {
-    });
-    
+//$(function() {
+//    $(".datepicker").datepicker();
+//
+//    }
+// );
+//alert(123);
+//$('input[type=submit]').one('submit', function() {
+//    $(this).attr('disabled','disabled');
+
 function trim(str) {
     str = str.replace(/^\s\s*/, '');
     var ws = /\s/,
     i = str.length;
     while (ws.test(str.charAt(--i)));
     return str.slice(0, i + 1);
+}
+
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, "&#039;");;
 }
 
 function Tip(divId){
@@ -116,32 +126,7 @@ function validateDate(obj,msg){
  * view more comment
  * @author vos_khanhnq16
  */
-function viewmoreComment(action, lastpage) {
-    //        var page=document.getElementById("page");
-    var url = "/"+action;
-    var currentPage = parseInt($('#page').val());
-    if(currentPage == lastpage){            
-        $.get(url,{page: 1},function(result){            
-            var div = $(result).find("#listComment");            
-            $('#clickViewmore').css('display','block');
-            $('#clickViewLittle').css('display','none');
-            $('#listComment').html(div.html());
-            $('#page').val(1);
-        });
-    } else {
-        $.get(url,{page: parseInt($('#page').val())+1},function(result){            
-        var div = $(result).find("#listComment");            
-        var last = $('#listComment').html();            
-        $('#listComment').html(last+div.html());
-        $('#page').val(parseInt($('#page').val())+1);  
-        if(parseInt($('#page').val()) == lastpage){
-             $('#clickViewmore').css('display','none');
-             $('#clickViewLittle').css('display','block');
-        }
-    });
-    }
-   
-}
+
 
 /**
  * function send comment
@@ -187,64 +172,7 @@ function trimAll(sString) {
     return trim(sString);
 }
 
-function trimComment(id) {
-    var comment = document.getElementById(id);
-    comment.value = comment.value.trim();
-//    if(sString == null)
-//        return sString;
-//    return trim(sString);
-}
 
-/**
- * switch page view video in genre
- */
-function lastPageVideoInGenre(){
-    $("div[name^='firstListVideoInGenre']").hide();
-    $("div[name^='secListVideoInGenre']").show();
-
-    $("#viewrightVideoIngenre").css("background","url(/images/imuzik_51_15.png) no-repeat -11px 0")
-    $("#viewleftVideoIngenre").css("background","url(/images/imuzik_51_15.png) no-repeat 0 0")
-}
-function firstPageVideoInGenre(){
-    $("div[name^='secListVideoInGenre']").hide();
-    $("div[name^='firstListVideoInGenre']").show();
-    $("#viewleftVideoIngenre").css("background","url(/images/imuzik_51.png) no-repeat 0 0")
-    $("#viewrightVideoIngenre").css("background","url(/images/imuzik_51.png) no-repeat -11px 0")
-}
-    
-    /**
-     * switch page view component video in singer
-     */
-function firstPageVideoInSinger(){
-    $("div[name^='secListVideoInSinger']").hide();
-    $("div[name^='firstListVideoInSinger']").show();
-    $("#viewleftAlbumInsinger").attr("class","l-arrow");
-    $("#viewrightAlbumInsinger").attr("class","r-arrow-active");
-}
-function lastPageVideoInSinger(){
-    $("div[name^='firstListVideoInSinger']").hide();
-    $("div[name^='secListVideoInSinger']").show();
-    $("#viewleftAlbumInsinger").attr("class","l-arrow-active");
-    $("#viewrightAlbumInsinger").attr("class","r-arrow");
-}
-    
-    
-    /**
-     * switch page view component video in singer
-     */
-function firstPageAlbumInSinger(){
-        $("div[name^='secListVideoAlbumInSinger']").hide();
-        $("div[name^='firstListAlbumInSinger']").show();
-        $("#viewleftAlbumInSinger").css("background","url(/images/imuzik_51.png) no-repeat 0 0");
-        $("#viewrightAlbumInSinger").css("background","url(/images/imuzik_51.png) no-repeat -11px 0");
-    }
-function lastPageAlbumInSinger(){
-        $("div[name^='firstListAlbumInSinger']").hide();
-        $("div[name^='secListVideoAlbumInSinger']").show();
-    
-        $("#viewleftAlbumInSinger").css("background","url(/images/imuzik_51_15.png) no-repeat 0 0");
-        $("#viewrightAlbumInSinger").css("background","url(/images/imuzik_51_15.png) no-repeat -11px 0");
-    }
 
 function checkMobile(isdn) {
     var re = /^8496\d{7}$|^8497\d{7}$|^8498\d{7}$|^8416\d{8}$|^0?96\d{7}$|^0?97\d{7}$|^0?98\d{7}$|^0?16\d{8}$/;

@@ -18,7 +18,7 @@ CKEDITOR.editorConfig = function( config )
             [ 'Styles','Format','Font','FontSize' ] ,
             [ 'TextColor','BGColor' ],
             [ 'ShowBlocks' ],
-            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
+            [ 'PasteText','PasteFromWord','-','Undo','Redo' ]
         ];
     config.toolbar = 'ImuzikBasic';
     config.toolbar_Imuzik =
@@ -32,7 +32,7 @@ CKEDITOR.editorConfig = function( config )
                 [ 'Styles','Format','Font','FontSize'] ,
                 [ 'TextColor','BGColor' ],
                 [ 'ShowBlocks' ],
-                [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
+                [ 'PasteText','PasteFromWord','-','Undo','Redo' ]
         ];
     config.extraPlugins = 'imuziksong';
 

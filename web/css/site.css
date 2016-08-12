@@ -1,13 +1,7 @@
-﻿@font-face {
-    font-family: 'UTM Avo';
-    src: url('../font/utm-avo.ttf');
-}
-
-body {
+﻿body {
     margin: 0;
-    font-family: 'UTM Avo';
+    font-family: Arial;
     font-size: 13px;
-    background: #4e5665;
     color: #000;
 }
 
@@ -24,6 +18,14 @@ img {
     border: 0 solid transparent;
 }
 
+button, input, textarea, select {
+    font-family: Arial;
+}
+
+button {
+    cursor: pointer;
+}
+
 ul.override {
     margin: 0;
     padding: 0;
@@ -32,10 +34,6 @@ ul.override {
 
 ul.li-left > li {
     float: left;
-}
-
-button {
-    cursor: pointer;
 }
 
 .container {
@@ -119,6 +117,15 @@ button {
     content: '.';
 }
 
+.row {
+    display: table;
+}
+
+    .row .col-three {
+        display: table-cell;
+        width: 33.3333333%;
+    }
+
 #wrapper {
     -moz-min-width: 1000px;
     -ms-min-width: 1000px;
@@ -128,28 +135,18 @@ button {
 }
 
 #header-panel {
+    background: #fff;
     position: fixed;
     border-top: 5px solid #a9a9a9;
     border-bottom: 1px solid #d4d4d4;
-    height: 120px;
+    height: 105px;
     width: 100%;
-    background: #fff;
     top: 0;
     z-index: 1000;
-    -webkit-filter: alpha(opacity=80);
-    -moz-filter: alpha(opacity=80);
-    -o-filter: alpha(opacity=80);
-    filter: alpha(opacity=80);
-    -ms-opacity: 0.8;
-    opacity: 0.8;
 }
 
     #header-panel + div {
-        padding-top: 126px;
-    }
-
-    #header-panel > * > a:first-child {
-        float: left;
+        padding-top: 111px;
     }
 
     #header-panel .container {
@@ -164,7 +161,8 @@ button {
 
     #header-links .menu {
         list-style: none;
-        margin: 55px 0;
+        line-height: 105px;
+        margin: 0;
     }
 
         #header-links .menu li {
@@ -173,14 +171,13 @@ button {
         }
 
             #header-links .menu li:last-child {
-                border-left: 1px solid #a3a3a3;
-                padding: 0 0 0 20px;
+                padding: 0;
             }
 
             #header-links .menu li a {
-                color: #a3a3a3;
+                color: #3f3f3f;
                 font-size: 11px;
-                /*font-weight: bold;*/
+                font-weight: bold;
                 text-transform: capitalize;
             }
 
@@ -199,16 +196,20 @@ button {
                     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEXZcBT////ZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBTZcBRir1mZAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEFJREFUeF5VjEcOgDAQxLybTu/1//9EuRCYkzWyjLzDWFAHCF4DMVUZqZuWrh8yjtO8sOomwH6cXLf5vcUthW/3AYKpApTHS4NEAAAAAElFTkSuQmCC') /*../img/arrow-right.png*/ right 2px no-repeat;
                     *background: url("../img/arrow-right.png") right 2px no-repeat; /* For IE 6 and 7 */
                     padding-right: 15px;
-                    font-weight: bold;
                 }
 
 #logo-viettel {
-    margin: 20px 0;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #menu-panel {
     background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid #dedede;
+    border: 0 solid #dedede;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
     height: 65px;
 }
 
@@ -264,7 +265,7 @@ button {
             }
 
     #menu a {
-        color: #a3a3a3;
+        color: #3f3f3f;
         display: block;
         line-height: 35px;
         font-size: 13px;
@@ -306,7 +307,7 @@ button {
     height: 18px;
     padding: 5px;
     width: 208px;
-    color: #9f9f9f;
+    color: #3f3f3f;
     font-size: 14px;
     border: 1px solid #a9a9a9;
 }
@@ -344,7 +345,7 @@ button {
 }
 
 #site-news {
-    background: url(../img/news-background.png) center top repeat-y;
+    padding-top: 25px;
 }
 
     #site-news a.group {
@@ -360,54 +361,77 @@ button {
 
     #site-news h2 {
         margin: 0;
-        font-size: 19px;
+        font-size: 18px;
         font-weight: normal;
         text-transform: uppercase;
     }
 
-.row .col-three {
-    float: left;
-    width: 293px;
-    padding: 0 28px;
-    margin-top: 50px;
-}
-
-    .row .col-three:first-child {
-        padding-left: 0;
+    #site-news.row .col-three,
+    #site-links .row .col-three {
+        width: 295px;
     }
 
-    .row .col-three:nth-of-type(2n+3) {
-        padding-right: 0;
-    }
-
-#site-news .col-three > a + div.line {
-    margin: 15px 80px 30px 0;
-}
-
-#site-news .col-three .more {
-    float: right;
-    margin-top: 5px;
-}
-
-    #site-news .col-three .more a {
-        color: #222;
-        font-size: 13px;
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUiIiL///8iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJE4cAYAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEFJREFUeF5VjEcOgDAQxLybTu/1//9EuRCYkzWyjLzDWFAHCF4DMVUZqZuWrh8yjtO8sOomwH6cXLf5vcUthW/3AYKpApTHS4NEAAAAAElFTkSuQmCC') /*../img/arrow-right-default.png*/ right 3px no-repeat;
-        *background: url("../img/arrow-right-default.png") right 3px no-repeat; /* For IE 6 and 7 */
-        padding-right: 15px;
-    }
-
-        #site-news .col-three .more a:hover {
-            color: #009591;
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUAlZH///8AlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZFaLfBWAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEBJREFUCNdVjEcSgCAUxfI+ihV79/73dAeSZSYTFMEVYCUgvFXUTQuCrg8M44RgXtaN3Q4B53XzvC63qf0d0vcDgqkClOt0BE8AAAAASUVORK5CYII=') /*../img/arrow-right-hover.png*/ right 3px no-repeat;
-            *background: url("../img/arrow-right-hover.png") right 3px no-repeat; /* For IE 6 and 7 */
+        #site-news.row .col-three:not(:first-child):not(:last-child),
+        #site-links .row .col-three:not(:first-child):not(:last-child) {
+            width: 410px;
         }
+
+            #site-news.row .col-three:not(:first-child):not(:last-child) .news-top-content,
+            #site-links .row .col-three:not(:first-child):not(:last-child) .box {
+                border: 0 solid #dedede;
+                border-left-width: 1px;
+                border-right-width: 1px;
+                margin: 0 37px;
+                padding: 0 37px;
+            }
+
+            #site-links .row .col-three:not(:first-child):not(:last-child) .box {
+                border-color: #fff;
+            }
+
+            #site-news.row .col-three:not(:first-child):not(:last-child) a.group,
+            #site-news.row .col-three:not(:first-child):not(:last-child) .more {
+                border-left: 1px solid #fff;
+                border-right: 1px solid #fff;
+                margin-left: 37px;
+                margin-right: 37px;
+                padding-left: 37px;
+                padding-right: 37px;
+            }
+
+    #site-news .col-three > h2 + div.line {
+        width: 200px;
+        margin: 7px 0 14px;
+    }
+
+    #site-news.row .col-three:not(:first-child):not(:last-child) > h2 + div.line {
+        margin-left: 75px;
+        margin-right: 75px;
+    }
+
+    #site-news .col-three .more {
+        text-align: right;
+        margin-top: 5px;
+    }
+
+        #site-news .col-three .more a {
+            color: #222;
+            font-size: 13px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUiIiL///8iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJE4cAYAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEFJREFUeF5VjEcOgDAQxLybTu/1//9EuRCYkzWyjLzDWFAHCF4DMVUZqZuWrh8yjtO8sOomwH6cXLf5vcUthW/3AYKpApTHS4NEAAAAAElFTkSuQmCC') /*../img/arrow-right-default.png*/ right 3px no-repeat;
+            *background: url("../img/arrow-right-default.png") right 3px no-repeat; /* For IE 6 and 7 */
+            padding-right: 15px;
+        }
+
+            #site-news .col-three .more a:hover {
+                color: #009591;
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUAlZH///8AlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZEAlZFaLfBWAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEBJREFUCNdVjEcSgCAUxfI+ihV79/73dAeSZSYTFMEVYCUgvFXUTQuCrg8M44RgXtaN3Q4B53XzvC63qf0d0vcDgqkClOt0BE8AAAAASUVORK5CYII=') /*../img/arrow-right-hover.png*/ right 3px no-repeat;
+                *background: url("../img/arrow-right-hover.png") right 3px no-repeat; /* For IE 6 and 7 */
+            }
 
 .news-item .description {
     color: #6c6c6c;
     margin: 10px 0;
     font-size: 13px;
-    line-height: 18px;
 }
 
 .news-item .date-time {
@@ -438,9 +462,9 @@ ul.news-items {
     display: block;
     width: 3px;
     background: #009591;
-    height: 15px;
+    height: 10px;
     float: left;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .news-item.news-item-top a h3 {
@@ -448,7 +472,6 @@ ul.news-items {
     padding-left: 10px;
     font-weight: normal;
     font-size: 15px;
-    line-height: 24px;
 }
 
 ul.news-items .news-item .news-img {
@@ -468,6 +491,15 @@ ul.news-items .news-item .news-content {
     padding-bottom: 20px;
 }
 
+    #site-links .line {
+        border-color: #fff;
+        margin-bottom: 34px;
+    }
+
+    #site-links .row .col-three:not(:first-child):not(:last-child) .line {
+        margin: 34px 75px;
+    }
+
     #site-links a {
         color: #000;
         font-size: 18px;
@@ -485,7 +517,9 @@ ul.news-items .news-item .news-content {
 
     #site-links .link-sub {
         list-style: none;
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 0;
     }
 
         #site-links .link-sub a,
@@ -494,26 +528,6 @@ ul.news-items .news-item .news-content {
             font-size: 13px;
             line-height: 24px;
         }
-
-    #site-links .col-three {
-        border-left: 1px solid #fff;
-        margin-top: 28px;
-        margin-bottom: 20px;
-    }
-
-        #site-links .col-three:first-child {
-            border-width: 0;
-        }
-
-        #site-links .col-three .box {
-            border-bottom: 1px solid #fff;
-            margin-bottom: -28px;
-            padding-bottom: 28px;
-        }
-
-    #site-links .row-last .col-three .box {
-        border-width: 0;
-    }
 
     #site-links .title .icon-thumb {
         background: url(../img/icon-home.png) 0 0 no-repeat;
@@ -580,7 +594,7 @@ ul.news-items .news-item .news-content {
     #social-network li {
         float: left;
         padding: 0 15px;
-        line-height: 229px;
+        line-height: 130px;
     }
 
     #social-network [class*="icon-"] {
@@ -616,7 +630,7 @@ ul.news-items .news-item .news-content {
 
 #newsletter {
     float: right;
-    margin-top: 80px;
+    margin-top: 30px;
     position: relative;
 }
 
@@ -718,8 +732,8 @@ ul.news-items .news-item .news-content {
     }
 
 #site-services {
-    color: #7a7a7a;
-    margin: 10px -28px 50px;
+    color: #3f3f3f;
+    margin: 0 -28px 30px;
 }
 
     #site-services ul {
@@ -729,105 +743,19 @@ ul.news-items .news-item .news-content {
     }
 
     #site-services > ul > li > div.item {
-        padding-top: 50px;
+        padding-top: 25px;
     }
 
-    #site-services .circle {
+    #site-services a img.img-hover {
+        display: none;
+    }
+
+    #site-services a:hover img.img-default {
+        display: none;
+    }
+
+    #site-services a:hover img.img-hover {
         display: inline-block;
-        width: 112px;
-        height: 112px;
-        background: url(../img/icon-home.png) -20px -19px no-repeat;
-        margin: 0 auto;
-    }
-
-    #site-services #mua-sim-chon-so {
-        background-position: -20px -19px;
-    }
-
-        #site-services #mua-sim-chon-so:hover {
-            background-position: -20px -161px;
-        }
-
-    #site-services #lap-dat-dich-vu-co-dinh {
-        background-position: -162px -21px;
-    }
-
-        #site-services #lap-dat-dich-vu-co-dinh:hover {
-            background-position: -162px -162px;
-        }
-
-    #site-services #viettel-shop {
-        background-position: -306px -20px;
-    }
-
-        #site-services #viettel-shop:hover {
-            background-position: -306px -162px;
-        }
-
-    #site-services #di-dong-tra-truoc {
-        background: url("../img/group.png") -2px -354px no-repeat;
-        width: 99px;
-        height: 99px;
-    }
-
-    #site-services #di-dong-tra-sau {
-        background: url("../img/group.png") -122px -354px no-repeat;
-        width: 99px;
-        height: 99px;
-    }
-
-    #site-services #dien-thoai-co-dinh-pstn {
-        background: url("../img/group.png") -223px -354px no-repeat;
-        width: 99px;
-        height: 99px;
-    }
-
-    #site-services #home-phone-co-dinh-khong-day {
-        background: url("../img/group.png") -326px -354px no-repeat;
-        width: 99px;
-        height: 99px;
-    }
-
-    #site-services #mobile-internet-3g {
-        background: url("../img/internet.png") -2px 0 no-repeat;
-        width: 99px;
-        height: 98px;
-    }
-
-    #site-services #internet-adsl-toc-do-cao {
-        background: url("../img/internet.png") -259px 0 no-repeat;
-        width: 99px;
-        height: 98px;
-    }
-
-    #site-services #internet-ftth-cap-quang {
-        background: url("../img/internet.png") -538px 0 no-repeat;
-        width: 99px;
-        height: 98px;
-    }
-
-    #site-services #next-tv {
-        background: url("../img/internet.png") -799px 0 no-repeat;
-        width: 99px;
-        height: 98px;
-    }
-
-    #site-services #di-dong-tra-truoc:hover,
-    #site-services #di-dong-tra-sau:hover,
-    #site-services #dien-thoai-co-dinh-pstn:hover,
-    #site-services #home-phone-co-dinh-khong-day:hover {
-        -moz-background-position-y: -453px;
-        -o-background-position-y: -453px;
-        background-position-y: -453px;
-    }
-
-    #site-services #mobile-internet-3g:hover,
-    #site-services #internet-adsl-toc-do-cao:hover,
-    #site-services #internet-ftth-cap-quang:hover,
-    #site-services #next-tv:hover {
-        -moz-background-position-y: -98px;
-        -o-background-position-y: -98px;
-        background-position-y: -98px;
     }
 
     #site-services .icons {
@@ -841,11 +769,11 @@ ul.news-items .news-item .news-content {
         }
 
         #site-services .icons .title {
-            padding: 30px 0 20px;
+            padding: 15px 0 0;
         }
 
 #slide-2 {
-    margin-top: 105px;
+    margin-top: 34px;
 }
 
     #slide-2 #mobile-2 {
@@ -855,28 +783,30 @@ ul.news-items .news-item .news-content {
 #viettel-account {
     float: right;
     width: 400px;
+    padding-top: 30px;
 }
 
     #viettel-account .title {
-        font-size: 18px;
-        margin-top: 30px;
-        color: #404040;
+        font-size: 16px;
+        color: #000;
         text-transform: capitalize;
+        margin: 0;
+        padding: 0 0 10px;
     }
 
     #viettel-account .description {
-        margin: 20px 0;
-        color: #404040;
+        color: #000;
+        margin: 0;
+        padding: 0 0 10px;
     }
 
     #viettel-account .btn {
         display: inline-block;
-        color: #404040;
-        margin-bottom: 20px;
+        color: #000;
+        margin-bottom: 10px;
         padding: 0 10px;
         line-height: 40px;
         border: 1px solid #fff;
-        font-family: 'UTM Avo',Arial,Tahoma,'Times new roman';
     }
 
         #viettel-account .btn:hover,
@@ -894,8 +824,8 @@ ul.news-items .news-item .news-content {
 }
 
 #register-viettel {
-    width: 155px;
-    margin-left: 42px;
+    width: 177px;
+    margin-left: 20px;
     text-align: center;
 }
 
@@ -920,15 +850,15 @@ ul.news-items .news-item .news-content {
 }
 
     .news-link li {
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUiIiL///8iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJE4cAYAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEBJREFUCNdVjEcSgCAUxfI+ihV79/73dAeSZSYTFMEVYCUgvFXUTQuCrg8M44RgXtaN3Q4B53XzvC63qf0d0vcDgqkClOt0BE8AAAAASUVORK5CYII=') /*../img/arrow-right-default.png*/ left 15px no-repeat;
-        *background: url(../img/arrow-right-default.png) left 15px no-repeat; /* For IE 6 and 7 */
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAVFBMVEUiIiL///8iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJE4cAYAAAAHHRSTlMAAN3cFhy8G6zzJ7LSFaDjJQm11BKfIQ/izQfJnVZ+LQAAAEBJREFUCNdVjEcSgCAUxfI+ihV79/73dAeSZSYTFMEVYCUgvFXUTQuCrg8M44RgXtaN3Q4B53XzvC63qf0d0vcDgqkClOt0BE8AAAAASUVORK5CYII=) /*../img/arrow-right-default.png*/ left center no-repeat;
+        *background: url(../img/arrow-right-default.png) left center no-repeat; /* For IE 6 and 7 */
     }
 
     .news-link a {
         font-size: 15px;
-        line-height: 36px;
+        line-height: 32px;
         color: #222;
-        padding-left: 25px;
+        padding-left: 15px;
     }
 
         .news-link a:hover {
@@ -972,7 +902,7 @@ ul.news-items .news-item .news-content {
         }
 
 #site-box {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .menu-dot {
@@ -1064,7 +994,6 @@ ul.news-items .news-item .news-content {
         line-height: 20px;
         color: #fff;
         font-style: italic;
-        font-family: 'Times new roman';
         padding: 15px 0;
     }
 
@@ -1091,7 +1020,6 @@ ul.news-items .news-item .news-content {
         line-height: 20px;
         color: #fff;
         font-style: italic;
-        font-family: 'Times new roman';
         padding: 15px 0;
     }
 
@@ -1118,7 +1046,6 @@ ul.news-items .news-item .news-content {
         line-height: 20px;
         color: #444d60;
         font-style: italic;
-        font-family: 'Times new roman';
         padding: 15px 0;
     }
 
@@ -1145,7 +1072,6 @@ ul.news-items .news-item .news-content {
         line-height: 20px;
         color: #fff;
         font-style: italic;
-        font-family: 'Times new roman';
         padding: 15px 0;
     }
 
@@ -1434,17 +1360,17 @@ ul.news-items .news-item .news-content {
     #menu-right ul a {
         font-size: 15px;
         color: #222;
-        line-height: 30px;
+        line-height: 25px;
         padding-left: 15px;
     }
 
 ul.arrow-type-4 li {
-    background: url('../img/group.png') -952px 12px no-repeat;
+    background: url('../img/group.png') -952px 7px no-repeat;
 }
 
 ul.arrow-type-5 li {
-    background: url('../img/group.png') -952px 16px no-repeat;
-    padding: 10px 0 10px 15px;
+    background: url('../img/group.png') -952px 10px no-repeat;
+    padding: 5px 0 5px 15px;
 }
 
 ul.arrow-type-5 a {
@@ -1614,12 +1540,12 @@ ul.news {
 }
 
 .thoai-va-tin-nhan-page #site-services .box {
-    height: 341px;
+    height: 230px;
     border-bottom: 1px solid #e1e1e1;
 }
 
 .thoai-va-tin-nhan-page #site-services .arrow-type-5 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .thoai-va-tin-nhan-page #site-services p {
@@ -1634,17 +1560,8 @@ ul.news {
     border-bottom: 1px solid #e1e1e1;
 }
 
-.home-page #site-services {
-    margin-top: 18px;
-    margin-bottom: 86px;
-}
-
-    .home-page #site-services p {
-        line-height: 24px;
-    }
-
 .home-page .news-item .description {
-    margin: 15px 0 25px;
+    margin: 6px 0 12px;
 }
 
 .internet-services-slider .button-back,
@@ -1654,7 +1571,7 @@ ul.news {
 
 .home-services-slider .button-back,
 .home-services-slider .button-next {
-    top: 95px;
+    top: 65px;
 }
 
 #cac-dich-vu-moi {
@@ -1690,7 +1607,7 @@ ul.news {
 
 #dich-vu-6 li {
     padding-left: 11px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
     #dich-vu-6 li:nth-child(3n+1) {
@@ -1718,16 +1635,15 @@ ul.news {
         }
 
         #dich-vu-6 .item .box .title {
+            background-color: #d2d2d2;
+            color: #222;
+            text-align: center;
+            font-size: 16px;
             position: absolute;
             left: 0;
             bottom: 0;
             width: 225px;
-            height: 45px;
-            background: #363636;
-            text-align: center;
-            color: #fff;
-            line-height: 45px;
-            font-size: 16px;
+            padding: 5px 0;
         }
 
     #dich-vu-6 .item:hover .box .description {
@@ -1787,17 +1703,17 @@ ul.news {
     }
 
     #dich-vu-7 .item .box .title {
+        background-color: #d2d2d2;
+        color: #222;
+        text-align: center;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 45px;
         position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
         height: 45px;
-        background: #363636;
-        text-align: center;
-        color: #fff;
-        line-height: 45px;
-        font-size: 16px;
-        text-transform: uppercase;
     }
 
     #dich-vu-7 .item:hover .box .description {
@@ -2105,6 +2021,7 @@ div#lien-he-social {
     width: 623px;
     color: #707070;
     line-height: 24px;
+    margin: 0;
     padding: 0 15px;
 }
 
@@ -2117,7 +2034,7 @@ div#lien-he-social {
 }
 
 #send-contact .row {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .search-result-summary {
@@ -2295,7 +2212,6 @@ div.thue-bao-info {
     }
 
 #danh-sach-cau-hoi .question {
-    margin-bottom: 15px;
     padding: 10px;
 }
 
@@ -2322,17 +2238,11 @@ div.thue-bao-info {
                 color: #878787;
             }
 
-    #danh-sach-cau-hoi .question .line-2 {
-        padding-top: 10px;
+    #danh-sach-cau-hoi .question .line-2 p {
+        margin: 0;
         font-size: 13px;
         line-height: 18px;
     }
-
-        #danh-sach-cau-hoi .question .line-2 p {
-            margin: 0;
-            font-size: 13px;
-            line-height: 18px;
-        }
 
     #danh-sach-cau-hoi .question .reply {
         display: none;
@@ -2354,7 +2264,6 @@ div.thue-bao-info {
     width: 300px;
     height: 29px;
     float: left;
-    font-family: 'UTM Avo';
     font-size: 14px;
 }
 
@@ -2362,7 +2271,6 @@ div.thue-bao-info {
     width: 300px;
     height: 29px;
     float: right;
-    font-family: 'UTM Avo';
     font-size: 14px;
 }
 
@@ -2401,7 +2309,6 @@ div.thue-bao-info {
 #news-details .head .line-1 .date-time {
     font-size: 12px;
     color: #939393;
-    font-family: arial;
     float: left;
 }
 
@@ -2414,23 +2321,26 @@ div.thue-bao-info {
     color: #009591;
     line-height: 20px;
     border-left: 3px solid #009591;
+    margin: 0;
     padding-left: 10px;
 }
 
-#news-details .news-box-links li a {
-    font-size: 12px;
-    line-height: 30px;
-    color: #3d3d3d;
+#news-details .news-box-links {
+    margin: 15px 0;
 }
+
+    #news-details .news-box-links li a {
+        font-size: 12px;
+        line-height: 25px;
+        color: #3d3d3d;
+    }
 
 #news-details .news-content {
     color: #373737;
-    line-height: 24px;
 }
 
     #news-details .news-content p {
         margin: 0;
-        line-height: 24px;
     }
 
     #news-details .news-content table {
@@ -2448,14 +2358,12 @@ div.thue-bao-info {
     }
 
 .bai-viet-lien-quan {
-    font-family: arial;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWkAAAAFAgMAAAD6VPVIAAAACVBMVEX////MzMz///8IuwXkAAAAAXRSTlMAQObYZgAAABxJREFUGNNjYMAJ1NIoAwwDBGjpbq1VlAGauhsA0fh1wcrUat0AAAAASUVORK5CYII=') /*../img/tin-lien-quan-title-bg.png*/ 0 16px no-repeat;
 }
 
 .tin-lien-quan .title {
     font-size: 18pt;
     color: #009591;
-    font-family: arial;
     background: #fff;
     display: inline-block;
     padding-right: 10px;
@@ -2546,7 +2454,7 @@ div.thue-bao-info {
         }
 
     .survey .choice li {
-        line-height: 35px;
+        line-height: 25px;
     }
 
     .survey .box-message {
@@ -2667,7 +2575,6 @@ img.captcha {
 .category-01 {
     height: 29px;
     float: right;
-    font-family: 'UTM Avo';
     font-size: 14px;
     width: 250px;
 }
@@ -2681,7 +2588,6 @@ img.captcha {
     width: 550px;
     height: 29px;
     float: right;
-    font-family: 'UTM Avo';
     font-size: 15px;
 }
 
@@ -2759,7 +2665,6 @@ form input, form textarea {
         padding: 5px 10px;
         border: 1px solid #c2c2c2;
         color: #333;
-        font-family: 'UTM Avo';
     }
 
     .std-form p input:hover,
@@ -2773,7 +2678,6 @@ form input, form textarea {
         width: 350px;
         padding: 5px 10px;
         border: 1px solid #c2c2c2;
-        font-family: 'UTM Avo';
     }
 
         .std-form p select:hover,
@@ -3235,7 +3139,7 @@ select#service-choice {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background: url('../img/add-cart.png') no-repeat left top;
+    background: url('../img/add-cart.png') no-repeat center center;
     position: relative;
     top: 8px;
 }
@@ -3280,7 +3184,6 @@ select#service-choice {
     }
 
     #product-details .product-info .command a {
-        height: 51px;
         text-align: center;
         line-height: 51px;
     }
@@ -3358,7 +3261,7 @@ select#service-choice {
 }
 
     #product-colors li {
-        margin-left: 25px;
+        margin-left: 5px;
         height: 25px;
     }
 

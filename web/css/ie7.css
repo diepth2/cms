@@ -1,0 +1,111 @@
+/* Xu ly CSS cho IE<8*/
+body{
+	margin-bottom: 0px;
+}
+
+.container {
+	width: 1170px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.col-lg-12 { width: 100%; float: left; }
+.col-lg-11 { width: 91.66666666%; float: left; }
+.col-lg-10 { width: 83.33333333%; float: left; }
+.col-lg-9 { width: 75%; float: left; }
+.col-lg-8 { width: 66.66666666%; float: left; }
+.col-lg-7 { width: 58.33333333%; float: left; }
+.col-lg-6 { width: 48%; float: left; }
+.col-lg-5 { width: 41.66666666%; float: left; }
+.col-lg-4 { width: 33%; float: left; }
+.col-lg-3 { width: 24.5%; float: left; }
+.col-lg-2 { width: 16.66666666%; float: left; }
+.col-lg-1 { width: 8.33333333%; float: left; }
+
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.col-lg-12{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.vtt-footer{
+	position: static;
+}
+
+.form-control{
+	padding-bottom: 0px;
+	height: 26px
+}
+
+ul.nav li {
+	float: left;
+
+}
+
+.vtt-nav-left, .vtt-nav-center{
+	float: left;
+}
+
+.vtt-logo{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.vtt-top-menu{
+	text-align: center;
+}
+
+.vtt-nav-left{
+	margin-left: 30px;
+}
+
+.vtt-nav-center{
+	width: 15%;
+	margin-left: 75px;
+}
+
+.wrapper{
+	position: relative;
+}
+
+.header-1{
+	position: absolute;
+	z-index: 2000;
+}
+
+.carousel .container {
+    	position: static;
+}
+
+.carousel-inner > .item > img {
+	position: static;
+}
+
+.header-1{
+    background-image: none;
+}
+
+.carousel-caption{
+	position: absolute;
+	bottom: 380px;
+}
+
+.slide-1{
+	position: relative;
+}
+
+.vtt-no-slide{
+    position: static;
+    background-image: url("../images/bg-menu.jpg");
+}
+
+.vtt-logo{
+	margin-bottom: 10px;
+}

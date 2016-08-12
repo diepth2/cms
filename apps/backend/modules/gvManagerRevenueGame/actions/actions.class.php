@@ -41,6 +41,8 @@ class gvManagerRevenueGameActions extends autoGvManagerRevenueGameActions
         // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
         $this->list_games = GameTable::getListGame();
         $this->list_os = ClientTypeTable::getListOs();
+        $this->list_os = ClientTypeTable::getListOs();
+        $this->list_partners = PartnerTable::getListPartner();
 
         // --------------------------------------------------------------------------------------------------------------
     }

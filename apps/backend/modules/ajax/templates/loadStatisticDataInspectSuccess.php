@@ -14,6 +14,7 @@ if ($form->isCSRFProtected()):?>
         var filter_game = $("#filter-game").val();
         var filter_os = $("#filter-os").val();
         var date_from = $("#date-from").val();
+        var filter_partner = $("#filter-partner").val();
         var date_to = $("#date-to").val();
         var url = '<?php echo url_for('ajax_load_statistic_data_inspect_pagination') ?>';
         var csrf_value = $("#ajax_token").val();
@@ -26,6 +27,7 @@ if ($form->isCSRFProtected()):?>
                 filter_date: filter_date,
                 filter_type: filter_type,
                 filter_game: filter_game,
+                filter_partner: filter_partner,
                 date_from: date_from,
                 filter_os: filter_os,
                 date_to: date_to,
