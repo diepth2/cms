@@ -1,3 +1,39 @@
+doanh_thu_ngay:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoneyLog
+    module:               gvManagerDoanhThuNgay
+    prefix_path:          /gvManagerDoanhThuNgay
+    column:               logid
+    with_wildcard_routes: true
+
+provider:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Provider
+    module:               gvManageProvider
+    prefix_path:          /gvManageProvider
+    column:               id
+    with_wildcard_routes: true
+
+doanh_thu:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LogPayment
+    module:               gvManageSanLuong
+    prefix_path:          /gvManageSanLuong
+    column:               id
+    with_wildcard_routes: true
+
+log_payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LogPayment
+    module:               gvManageLogPayment
+    prefix_path:          /gvManageLogPayment
+    column:               id
+    with_wildcard_routes: true
+
 revenue_game:
   class: sfDoctrineRouteCollection
   options:

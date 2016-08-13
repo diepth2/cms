@@ -1,0 +1,19 @@
+## YAML Template.
+---
+bccs:
+#url test
+  url_megapay: "http://charging-test.megapay.net.vn:10001/CardChargingGW_V2.0/services/Services?wsdl"
+  m_PartnerID: "charging01"
+  m_MPIN: "pajwtlzcb"
+  m_UserName: "charging02"
+  m_Pass: 	"fisqaz"
+  m_PartnerCode: "00477"
+  m_Target: "useraccount1"
+  # that
+  ws_url: 'http://gachthe.megapay.net.vn/chargingApi',                                         //link webservice của Epay
+  partnerId: '11359',                                                                     //Mã Merchant, sau khi đăng ký dịch vụ, Epay sẽ cung cấp cho khách hàng
+  targetAcc: 'chrapi',                                                                    //Tên Merchant Epay cung cấp cho khách hàng
+  password: '2f6e1b'
+timeout:
+  connect: 3
+  response: 30

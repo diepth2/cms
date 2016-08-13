@@ -332,7 +332,6 @@ if ($form->isCSRFProtected()):?>
         var filter_partner = $("#filter-partner").val();
         var filter_os = $("#filter-os").val();
         var filter_partner = $("#filter-partner").val();
-        var filter_date = $("#filter-date").val();
         var date_from = $("#date-from").val();
         var date_to = $("#date-to").val();
         var url = '<?php echo url_for('ajax_load_statistic_data_inspect_pagination') ?>';
@@ -343,10 +342,10 @@ if ($form->isCSRFProtected()):?>
             data:
             {
                 pageId: pageId,
-                filter_publisher: filter_publisher,
+                filter_os: filter_os,
                 filter_date: filter_date,
-                filter_app: filter_app,
-                filter_api: filter_api,
+                filter_type: filter_type,
+                filter_game: filter_game,
                 filter_partner: filter_partner,
                 date_from: date_from,
                 date_to: date_to,
