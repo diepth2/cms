@@ -52,8 +52,8 @@ class MoneyLogTable extends Doctrine_Table
         $date1Arr = explode('-', $date);
         $sql = MoneyLogTable::getInstance()->createQuery('a')
             ->select('SUM(a.taxValue) AS sumTaxValue');
-        $sql->where('MONTH(a.insertedTime)= ?', $date1Arr[0]);
-        $sql->andwhere('YEAR(a.insertedTime)= ?', $date1Arr[1]);
+        $sql->where('MONTH(a.insertedTime)= ?', $date1Arr[1]);
+        $sql->andwhere('YEAR(a.insertedTime)= ?', $date1Arr[0]);
         $sql = self::prepareQuery($sql, $gameId = null, $type_game = null, $os_type = null);
         return $sql->fetchArray();
     }

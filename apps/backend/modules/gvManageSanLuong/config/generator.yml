@@ -1,0 +1,27 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           LogPayment
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          doanh_thu
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Thống kê doanh thu thẻ nạp
+        display: [parter_name, provider_code, card_amount, menhgia]
+        actions: {}
+        object_actions: {}
+      filter:
+        class: gvManageSanLuongFormFiltersAdmin
+        display: [created_at, partner_id]
+      form:    ~
+      edit:    ~
+      new:     ~

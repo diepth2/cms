@@ -1707,6 +1707,18 @@ Link:
       primary: false
       notnull: false
       autoincrement: false
+Provider:
+  connection: doctrine
+  tableName: provider
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    code: { type: string(30), comment: "mã nhà mạng" }
+    description: {type: string(255), comment: "mô tả" }
 LogPayment:
   connection: doctrine
   tableName: log_payment
@@ -1728,6 +1740,7 @@ LogPayment:
       autoincrement: false
     seria:          { type: string(30), comment: "seria" }
     pin_card:          { type: string(30), comment: "mã thẻ" }
+    providerId: {type: interger(2), comment: "Id nhà cung cấp"}
     money:
       type: integer(8)
       fixed: false
@@ -1766,7 +1779,9 @@ LogPayment:
       autoincrement: false
     request_time:      { type: timestamp(25), notnull: true, comment: "Thời gian phản hồi" }
   relations:
+    UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: LogPayment }
     User:       { class: User, local: userId, foreign: userId, type: one, foreignAlias: LogPayment }
+    Provider:       { class: Provider, local: providerId, type: one, foreignAlias: LogPayments}
 MatchLog:
   connection: doctrine
   tableName: match_log

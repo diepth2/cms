@@ -12,20 +12,20 @@ for($i=1; $i<=date("d");$i++){
     $dataDate2['d'.$i] = date("Y-m-d", $daystr);
 }
 //
-    //$data = array();
-    //for($i=1; $i<=date("d"); $i++){
-    //    foreach($apiRequestGroupByDate as $valRequestByDevId){
-    //        $dt1 = '"'. date_format(date_create($valRequestByDevId['created_at']),'Y-m-d' ).'"';
-    //        if($dt1 == $dataDate['d'.$i]){
-    //            $dataRevenue['d'.$i] = $valRequestByDevId['sumRevenue'];
-    //            $dataRequest['d'.$i] = $valRequestByDevId['sumRequest'];
-    //        }
-    //    }
-    //    if(!isset($dataRevenue['d'.$i])){$dataRevenue['d'.$i] = 0;}
-    //    if(!isset($dataRequest['d'.$i])){$dataRequest['d'.$i] = 0;}
-    //    //
-    //    $data[] = "{date:".$dataDate['d'.$i].", revenu:".$dataRevenue['d'.$i].", request:".$dataRequest['d'.$i]."}";
-    //}
+//    $data = array();
+//    for($i=1; $i<=date("d"); $i++){
+//        foreach($apiRequestGroupByDate as $valRequestByDevId){
+//            $dt1 = '"'. date_format(date_create($valRequestByDevId['created_at']),'Y-m-d' ).'"';
+//            if($dt1 == $dataDate['d'.$i]){
+//                $dataRevenue['d'.$i] = $valRequestByDevId['sumRevenue'];
+//                $dataRequest['d'.$i] = $valRequestByDevId['sumRequest'];
+//            }
+//        }
+//        if(!isset($dataRevenue['d'.$i])){$dataRevenue['d'.$i] = 0;}
+//        if(!isset($dataRequest['d'.$i])){$dataRequest['d'.$i] = 0;}
+//        //
+//        $data[] = "{date:".$dataDate['d'.$i].", revenu:".$dataRevenue['d'.$i].", request:".$dataRequest['d'.$i]."}";
+//    }
 //
 $arrRevenueTotal2 = array();    // Mảng lưu thu nhập theo cột trong bảng
 $arrRevenueGoldTotal2 = array();    // Mảng lưu số lần yêu cầu theo cột trong bảng
@@ -126,20 +126,20 @@ foreach ($dataDate2 as $valDate2){
 					</div>
 				</div>
             </div><!-- Lựa chọn tìm kiếm -->
-            <div class="row-fluid" class="ui-talbe-body">
-                <div class="col-lg-12">
-                    <div style="border: 1px solid #ddd;">
-                        <div class="ui-table-header-chart"><?php echo __('Biểu đồ: Thu nhập ước tính và Số lần yêu cầu')?></div>
-                        <div class="panel-body">
-                            <div id="chartdiv" style="width: 100%; height: 400px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Bieu do -->
+<!--            <div class="row-fluid" class="ui-talbe-body">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <div style="border: 1px solid #ddd;">-->
+<!--                        <div class="ui-table-header-chart">--><?php //echo __('Biểu đồ: Thu nhập ước tính và Số lần yêu cầu')?><!--</div>-->
+<!--                        <div class="panel-body">-->
+<!--                            <div id="chartdiv" style="width: 100%; height: 400px;"></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div><!-- Bieu do -->
             <div class="row-fluid ui-talbe-body" style="margin-top: 25px; margin-bottom: 25px;">
                 <div class="col-lg-12" ">
                     <div style="border: 1px solid #ddd;">
-                        <div class="ui-table-header-chart"><?php echo __('Thống kê: Thu nhập ước tính và Số lần yêu cầu')?></div>
+                        <div class="ui-table-header-chart"><?php echo __('Thống kê phế theo game')?></div>
                         <div class="panel-body" id="statisticdiv">
                             <div class="row-fluid" style="overflow-x: scroll;">
                                 <div class="col-lg-12" style="padding: 10px;>
@@ -432,109 +432,3 @@ foreach ($dataDate2 as $valDate2){
 </script>
 
 <!-- Xu ly ajax ve bieu do -->
-<script type="text/javascript">
-    var chart;
-    var chartData = [];
-    //
-    AmCharts.ready(function () {
-        // Generate some random data first
-        chartData = [<?php #echo implode(',', $data) ?>];
-        // Serial chart
-        chart = new AmCharts.AmSerialChart();
-        chart.pathToImages = "/js/amcharts/images/";
-        chart.dataProvider = chartData;
-        chart.categoryField = "date";
-        chart.dataDateFormat = "YYYY-MM-DD";
-        // Format truc Y
-        chart.numberFormatter = {
-            precision:0,
-            decimalSeparator:".",
-            thousandsSeparator:","
-        };
-        // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
-        chart.addListener("dataUpdated", zoomChart);
-        // AXES
-        // category
-        var categoryAxis = chart.categoryAxis;
-        categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
-        categoryAxis.minPeriod = "DD"; // our data is daily, so we set minPeriod to DD
-        categoryAxis.minorGridEnabled = true;
-        categoryAxis.axisColor = "#DADADA";
-        categoryAxis.twoLineMode = true;
-        categoryAxis.dateFormats = [{
-            period: 'DD',
-            format: 'DD'
-        }, {
-            period: 'WW',
-            format: 'DD'
-        }, {
-            period: 'MM',
-            format: 'MM'
-        }, {
-            period: 'YYYY',
-            format: 'YYYY'
-        }];
-
-        // First value axis (on the left)
-        var valueAxis1 = new AmCharts.ValueAxis();
-        valueAxis1.axisColor = "#FF6600";
-        valueAxis1.axisThickness = 2;
-        valueAxis1.gridAlpha = 0;
-        chart.addValueAxis(valueAxis1);
-
-        // Second value axis (on the right)
-        var valueAxis2 = new AmCharts.ValueAxis();
-        valueAxis2.position = "right"; // this line makes the axis to appear on the right
-        valueAxis2.axisColor = "#FCD202";
-        valueAxis2.gridAlpha = 0;
-        valueAxis2.axisThickness = 2;
-        chart.addValueAxis(valueAxis2);
-
-        // Graphs
-        // First graph
-        var graph1 = new AmCharts.AmGraph();
-        graph1.valueAxis = valueAxis1; // we have to indicate which value axis should be used
-        graph1.title = "<?php echo __('Thu nhập ước tính (VND):') ?>";
-        graph1.valueField = "revenu";
-        graph1.bullet = "round";
-        graph1.hideBulletsCount = 30;
-        graph1.bulletBorderThickness = 1;
-        chart.addGraph(graph1);
-
-        // Second graph
-        var graph2 = new AmCharts.AmGraph();
-        graph2.valueAxis = valueAxis2; // we have to indicate which value axis should be used
-        graph2.title = "<?php echo __('Số lần yêu cầu:') ?>";
-        graph2.valueField = "request";
-        graph2.bullet = "square";
-        graph2.hideBulletsCount = 30;
-        graph2.bulletBorderThickness = 1;
-        chart.addGraph(graph2);
-
-        // CURSOR
-        var chartCursor = new AmCharts.ChartCursor();
-        chartCursor.cursorAlpha = 0.1;
-        chartCursor.fullWidth = true;
-        chart.addChartCursor(chartCursor);
-        chartCursor.categoryBalloonDateFormat = 'DD-MM-YYYY';
-
-        // SCROLLBAR
-        var chartScrollbar = new AmCharts.ChartScrollbar();
-        chart.addChartScrollbar(chartScrollbar);
-
-        // LEGEND
-        var legend = new AmCharts.AmLegend();
-        legend.marginLeft = 0;
-        legend.useGraphSettings = true;
-        chart.addLegend(legend);
-        legend.valueWidth = 100
-
-        // WRITE
-        chart.write("chartdiv");
-
-        function zoomChart() {
-            //chart.zoomToIndexes(0, 3);
-        }
-    });
-</script>
-

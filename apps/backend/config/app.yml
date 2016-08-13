@@ -26,12 +26,21 @@ all:
         Quản lý doanh thu:
           credentials: [admin]
           dropdown:
+            Quản lý doanh thu theo ngày:
+              credentials: [[admin]]
+              route: doanh_thu_ngay
+            Quản lý doanh thu thẻ nạp:
+              credentials: [[admin]]
+              route: doanh_thu
             Quản lý tiền phế trong game:
               credentials: [[admin]]
               route: revenue_game
-            Quản lý kịch sử tiền chơi game:
+            Quản lý lịch sử tiền chơi game:
               credentials: [[admin]]
               route: money_log
+            Quản lý lịch sử nạp thẻ:
+              credentials: [[admin]]
+              route: log_payment
         Quản lý game:
           credentials: [[admin]]
           dropdown:
@@ -113,6 +122,9 @@ all:
             Quản lý đối tác:
               credentials: [admin]
               route: partner
+            Danh sách nhà mạng:
+              credentials: [admin]
+              route: provider
         Ngôn ngữ:
           dropdown:
             Tiếng Việt:
