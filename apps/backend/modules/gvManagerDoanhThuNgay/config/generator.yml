@@ -14,8 +14,11 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+
+      filter:
+        class: gvManageSanLuongFormFiltersAdmin
+        display: [date, partner_id, game_id]
       form:    ~
       edit:    ~
       new:     ~

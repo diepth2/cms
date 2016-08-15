@@ -15,12 +15,14 @@ abstract class BaseGameFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description' => new sfWidgetFormFilterInput(),
+      'help'        => new sfWidgetFormFilterInput(),
       'status'      => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'name'        => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
+      'help'        => new sfValidatorPass(array('required' => false)),
       'status'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
@@ -44,6 +46,7 @@ abstract class BaseGameFormFilter extends BaseFormFilterDoctrine
       'gameid'      => 'Number',
       'name'        => 'Text',
       'description' => 'Text',
+      'help'        => 'Text',
       'status'      => 'Number',
     );
   }
