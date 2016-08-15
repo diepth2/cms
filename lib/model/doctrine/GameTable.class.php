@@ -26,4 +26,16 @@ class GameTable extends Doctrine_Table
         }
         return $sql->fetchArray();
     }
+    public static function getListGameForSelectBox()
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $listType[""] = $i18n->__("Tất cả");
+        $arrType = GameTable::getInstance()->createQuery('a')
+            ->select('a.gameid, a.name')->fetchArray();
+        foreach($arrType as $valType){
+            $listType[$valType['gameid']] = $valType['name'];
+        }
+        return $listType;
+    }
+
 }

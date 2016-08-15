@@ -4,7 +4,7 @@ doanh_thu_ngay:
     model:                MoneyLog
     module:               gvManagerDoanhThuNgay
     prefix_path:          /gvManagerDoanhThuNgay
-    column:               logid
+    column:               id
     with_wildcard_routes: true
 
 provider:

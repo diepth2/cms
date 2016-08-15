@@ -15,10 +15,13 @@ generator:
       actions: ~
       fields:  ~
       list:
-
+        title: Doanh thu theo ngày
+        display: [created_date, sum_money]
+        actions: {}
+        object_actions: {}
       filter:
         class: gvManageDoanhThuNgayFormFiltersAdmin
-        display: [date, partner_id, game_id]
+        display: [created_at, partner_id, game_id]
       form:    ~
       edit:    ~
       new:     ~

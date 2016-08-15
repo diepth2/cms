@@ -16,12 +16,12 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
     {
         $i18n = sfContext::getInstance()->getI18N();
         $arr_cp = PartnerTable::getListPartnerForSelectBox();
-        $arr_game = GameTable::getListGame();
+        $arr_game = GameTable::getListGameForSelectBox();
         $this->setWidgets(array(
             'partner_id' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
             'game_id' => new sfWidgetFormChoice(array('choices' => $arr_game), array('add_empty' => true)),
 
-            'date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
+            'created_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
 
 
         ));
@@ -29,13 +29,13 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
         $this->setValidators(array(
             'partner_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
             'game_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_game))),
-            'date' => new sfValidatorDateRange(array('required' => false,
+            'created_at' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
             ));
 
         $this->widgetSchema->setNameFormat('gv_log_payment_filters[%s]');
-        $this->widgetSchema['created_at']->setLabel($i18n->__("Thời gian giao dịch"));
+        $this->widgetSchema['created_at']->setLabel($i18n->__("Thời gian"));
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -46,10 +46,10 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
     public function doBuildQuery(array $values) {
         $query = parent::doBuildQuery($values);
         $alias = $query->getRootAlias();
-        $query->select("p.partnerName as parter_name, d.code as provider_code, count(". $alias . ".id) as card_amount, "
-            . $alias . ".money as menhgia, g.cp");
-        $query->where($alias. ".money > 0");
-        $query->andWhere("status = 1");
+        $query->select("DATE(". $alias .".created_at) as created_date," . "p.partnerName as parter_name, d.code as provider_code, sum("
+            . $alias . ".money) as sum_money, g.cp, " . $alias . ".created_at");
+//        $query->where($alias. ".money > 0");
+//        $query->andWhere("status = 1");
         if (array_key_exists('created_at', $values)) {
             $text = trim($values['created_at']['text']);
             $dateArr = explode('-', $text);
@@ -75,8 +75,9 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
         $query->leftJoin($alias. ".UserInfo g");
         $query->leftJoin("g.Partner p");
         $query->leftJoin($alias . ".Provider d");
-        $query->groupBy("d.code, ". $alias . ".money");
-        $query->orderBy($alias . ".providerId desc");
+        $query->groupBy("DATE(". $alias .".created_at)");
+
+        $query->orderBy($alias . ".created_at desc");
         return $query;
     }
 
