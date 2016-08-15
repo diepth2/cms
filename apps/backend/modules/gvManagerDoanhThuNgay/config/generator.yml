@@ -17,7 +17,7 @@ generator:
       list:
 
       filter:
-        class: gvManageSanLuongFormFiltersAdmin
+        class: gvManageDoanhThuNgayFormFiltersAdmin
         display: [date, partner_id, game_id]
       form:    ~
       edit:    ~

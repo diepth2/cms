@@ -10,7 +10,7 @@
  *
  * @author ngoctv1
  */
-class gvManageSanLuongFormFiltersAdmin extends BaseLogPaymentFormFilter
+class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
 {
     public function configure()
     {
