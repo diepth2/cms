@@ -10,17 +10,20 @@ Doctrine_Manager::getInstance()->bindComponent('Game', 'doctrine');
  * @property integer $gameid
  * @property string $name
  * @property string $description
+ * @property string $help
  * @property integer $status
  * @property Doctrine_Collection $MoneyLogs
  * 
  * @method integer             getGameid()      Returns the current record's "gameid" value
  * @method string              getName()        Returns the current record's "name" value
  * @method string              getDescription() Returns the current record's "description" value
+ * @method string              getHelp()        Returns the current record's "help" value
  * @method integer             getStatus()      Returns the current record's "status" value
  * @method Doctrine_Collection getMoneyLogs()   Returns the current record's "MoneyLogs" collection
  * @method Game                setGameid()      Sets the current record's "gameid" value
  * @method Game                setName()        Sets the current record's "name" value
  * @method Game                setDescription() Sets the current record's "description" value
+ * @method Game                setHelp()        Sets the current record's "help" value
  * @method Game                setStatus()      Sets the current record's "status" value
  * @method Game                setMoneyLogs()   Sets the current record's "MoneyLogs" collection
  * 
@@ -52,6 +55,15 @@ abstract class BaseGame extends sfDoctrineRecord
              'length' => 50,
              ));
         $this->hasColumn('description', 'string', 4000, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4000,
+             ));
+        $this->hasColumn('help', 'string', 4000, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,

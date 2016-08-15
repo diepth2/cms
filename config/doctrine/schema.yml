@@ -958,6 +958,13 @@ Game:
       primary: false
       notnull: false
       autoincrement: false
+    help:
+      type: string(4000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
     status:
       type: integer(1)
       fixed: false

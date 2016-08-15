@@ -18,6 +18,7 @@ abstract class BaseGameForm extends BaseFormDoctrine
       'gameid'      => new sfWidgetFormInputHidden(),
       'name'        => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
+      'help'        => new sfWidgetFormTextarea(),
       'status'      => new sfWidgetFormInputText(),
     ));
 
@@ -25,6 +26,7 @@ abstract class BaseGameForm extends BaseFormDoctrine
       'gameid'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('gameid')), 'empty_value' => $this->getObject()->get('gameid'), 'required' => false)),
       'name'        => new sfValidatorString(array('max_length' => 50)),
       'description' => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
+      'help'        => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
       'status'      => new sfValidatorInteger(array('required' => false)),
     ));
 

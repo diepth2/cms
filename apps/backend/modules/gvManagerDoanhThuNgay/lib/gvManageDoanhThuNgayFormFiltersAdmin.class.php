@@ -10,23 +10,26 @@
  *
  * @author ngoctv1
  */
-class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
+class gvManageSanLuongFormFiltersAdmin extends BaseLogPaymentFormFilter
 {
     public function configure()
     {
         $i18n = sfContext::getInstance()->getI18N();
         $arr_cp = PartnerTable::getListPartnerForSelectBox();
+        $arr_game = GameTable::getListGame();
         $this->setWidgets(array(
             'partner_id' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
+            'game_id' => new sfWidgetFormChoice(array('choices' => $arr_game), array('add_empty' => true)),
 
-            'created_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
+            'date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
 
 
         ));
 
         $this->setValidators(array(
             'partner_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
-            'created_at' => new sfValidatorDateRange(array('required' => false,
+            'game_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_game))),
+            'date' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
             ));
